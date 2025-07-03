@@ -1,0 +1,100 @@
+<mxfile host="Electron" modified="2023-11-16T13:20:40.285Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="pgQEeU21FQOie5jt2E9I" version="22.0.2" type="device">
+  <diagram name="Seite-1" id="Zmq4lRNSQWAtZaYySdNu">
+    <mxGraphModel dx="1098" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kh8doWQta-9HB4MEzidA-1" value="PAP&amp;nbsp;A_01_04_03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry y="18" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-2" target="kh8doWQta-9HB4MEzidA-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-2" value="Start" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="125" y="48" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-3" value="Ende" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="125" y="640" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kh8doWQta-9HB4MEzidA-4" target="kh8doWQta-9HB4MEzidA-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-4" value="char zeichen1, zeichen2" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="110" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-5" target="kh8doWQta-9HB4MEzidA-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-5" value="int a = 1, b = 2, auswahl" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-7" target="kh8doWQta-9HB4MEzidA-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-7" value="ausgabe(&quot;Geben Sie bitte den ersten Buchstaben: &quot;)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="210" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-8" target="kh8doWQta-9HB4MEzidA-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-8" value="zeichen1 = eingabe()" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="260" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-9" target="kh8doWQta-9HB4MEzidA-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-9" value="ausgabe(&quot;Geben Sie bitte den zweiten Buchstaben: &quot;)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="310" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-10" target="kh8doWQta-9HB4MEzidA-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-10" value="zeichen2 = eingabe()" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="360" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="315" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-11" target="kh8doWQta-9HB4MEzidA-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-11" value="auswahl == 1" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="85" y="500" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-12" target="kh8doWQta-9HB4MEzidA-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-12" value="ausgabe(&quot;Wenn Sie wollen, dass die beiden Buchstaben nebeneinander angezeigt würden, drücken Sie &#39;1&#39;, wenn übereinander - &#39;2&#39;&quot;)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="410" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-16" target="kh8doWQta-9HB4MEzidA-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-16" value="auswahl == 2" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="315" y="500" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-18" target="kh8doWQta-9HB4MEzidA-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-18" value="ausgabe(zeichen1,zeichen2)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="82.5" y="570" width="185" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kh8doWQta-9HB4MEzidA-19" target="kh8doWQta-9HB4MEzidA-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="620" />
+              <mxPoint x="175" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kh8doWQta-9HB4MEzidA-19" value="ausgabe(zeichen1\n,zeichen2)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="307.5" y="570" width="195" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
