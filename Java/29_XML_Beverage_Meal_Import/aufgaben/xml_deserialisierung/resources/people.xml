@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE People [
+        <!ELEMENT People (person+)>
+        <!ELEMENT person (name, alter, email)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT alter (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        ] >
+<People>
+    <person>
+        <name>Müller</name>
+        <alter>35</alter>
+        <email>mueller@web.de</email>
+    </person>
+    <person>
+        <name>Schmidt</name>
+        <alter>43</alter>
+        <email>schmidt@web.de</email>
+    </person>
+    <person>
+        <name>Schneider</name>
+        <alter>28</alter>
+        <email>schneider@web.de</email>
+    </person>
+</People>
