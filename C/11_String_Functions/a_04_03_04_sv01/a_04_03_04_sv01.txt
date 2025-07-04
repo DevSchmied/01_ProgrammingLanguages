@@ -1,0 +1,19 @@
+a_04_03_04_sv01
+{
+    char zeile[100]
+    int zaehler=0
+
+    zeile = eingabe("Geben Sie einen String ein: ")
+
+    solange (zaehler<länge(zeile))
+    {
+        wenn(zeile[i]>=a UND zeile[i]<=z)
+        {
+            zeileKopie(zeile[i],zeile[i]-32)
+        }
+
+        zaehler = zaehler+1
+    }
+
+    ausgabe(zeile[100])
+}
