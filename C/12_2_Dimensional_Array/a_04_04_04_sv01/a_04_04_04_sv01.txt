@@ -1,0 +1,19 @@
+a_04_04_04_sv01
+{
+    zufallsGenerator
+    int arr[3][6], summe
+
+    für(int i=0; i<3; i++){
+        für(int j=0; j<6; j++){
+            arr[i][j] = zufallsZahl() zwischen 1 und 10
+        }
+
+        summe = 0
+        für(j=0; j<6; j++){
+            summe = summe + arr[i][j]
+        }
+        arr[i][0] = summe
+    }
+
+
+}
