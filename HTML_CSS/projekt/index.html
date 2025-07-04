@@ -1,0 +1,159 @@
+<!-- ===================== Cyber-Cafe ========================================= -->
+
+<!DOCTYPE html>
+<html class="background-image">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Das beste Café der Zeit">
+    <meta name="keywords" content="Burger, Essen, Cola">
+
+    <title>Cyber-Cafe</title>
+    <link rel="stylesheet" href="../Projekt/css/style.css">
+    <link rel="icon" href="img/logo/favicon/favicon-32x32.png" sizes="any" type="image/png">
+
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-areas:    "slogan     burger"
+                                    "buchen     burger"
+                                    "event      burger";
+            font-weight: bolder;
+        }
+
+        main a:link {
+        font-weight: bolder;
+        color: #6699CC;
+        text-decoration: none;
+        }
+    
+        main a:visited {
+        color: #CCCCCC;
+        text-decoration: none;
+        }
+
+        main a:hover {
+        text-decoration: underline;
+        color: rgb(128, 187, 128);
+        background-color: transparent;
+        }
+
+        .slogan {
+            grid-area: slogan;
+            font-size: 2em;
+            text-align: center;
+            line-height: auto;
+        }
+
+        .buchen {
+            grid-area: buchen;
+            text-align: center;
+        }
+
+        .events {
+            grid-area: event;
+            text-align: center;
+        }
+
+        .burger {
+            grid-area: burger;
+            max-width: 450px;
+            max-height: 450px;
+            /* width: 100%; */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--===================================================================================================     HEADER    ==================================================== -->
+    <header>
+
+        <div class="logoContainer">
+            <img class="logo" src="img/logo/logo.jfif" alt="">
+        </div>
+
+        <div class="navCenter">
+
+        </div>
+            <!--============================================================================================     NAVIGATION IM HEADER    ====================================== -->
+        <nav>
+            <div class="navCenter">
+                <a href="index.html">Home</a> 
+            </div>
+    
+            <div class="navCenter">
+                <a href="../Projekt/unterseite/ueber_uns.html">Über uns</a> 
+            </div>
+    
+            <div class="navCenter">
+                <a href="../Projekt/unterseite/chefkoche.html">Chefköche</a> 
+            </div>
+    
+            <div class="navCenter">
+                <a href="../Projekt/unterseite/speisekarte.html">Speisekarte</a> 
+            </div>
+            
+        </nav>
+        
+    </header>
+
+    <!--===================================================================================================     MAIN      ==================================================== -->
+
+    <main>
+        <article class="slogan">
+            "Der Burger-Geschmack der Zukunft"
+        </article>
+
+        <section class="buchen">
+            <h2>Buchung</h2>
+            Drücke auf <a href="../Projekt/unterseite/buchung.html" target="_blank" title="öffnet die Seite in einem neuen Tab">BUCHEN</a>, um deinen Platz in unserem futuristischen Cyber-Café zu sichern! 
+        </section>
+        
+
+        <!--============================================================================================     ASIDE    ====================================== -->
+
+        <aside class="events">
+            <h2>Events in unserem Café</h2>
+            Alle aufregenden Aktivitäten, die in unserem futuristischen Café stattfinden, findest du <a href="../Projekt/unterseite/events.html">HIER</a> 
+        </aside>
+
+        <img class="burger" src="img/burger/burger.jfif" title="Tauche ein in die Zukunft des Genusses mit einem Bissen von unseren epischen Techno-Burgern!" alt="Normalerweise befindet sich hier ein Bild von einem leckeren Burger">
+
+    </main>
+
+    <!--===================================================================================================     FOOTER       ============================================= -->    
+    
+    <footer>
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+            <a href="../Projekt/unterseite/feedback.html" target="_blank" title="öffnet die Seite in einem neuen Tab">Feedback</a> 
+        </div>
+
+        <div>
+            <a href="../Projekt/unterseite/kontakte.html" target="_blank" title="öffnet die Seite in einem neuen Tab">Kontakte</a>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
