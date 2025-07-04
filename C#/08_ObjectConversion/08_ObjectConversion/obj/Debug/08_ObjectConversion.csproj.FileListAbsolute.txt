@@ -1,0 +1,8 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\bin\Debug\08_ObjectConversion.exe.config
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\bin\Debug\08_ObjectConversion.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\bin\Debug\08_ObjectConversion.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\obj\Debug\08_ObjectConversion.csproj.AssemblyReference.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\obj\Debug\08_ObjectConversion.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\obj\Debug\08_ObjectConversion.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\obj\Debug\08_ObjectConversion.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\08_ObjectConversion\08_ObjectConversion\obj\Debug\08_ObjectConversion.exe.config
