@@ -1,0 +1,8 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\bin\Debug\06_Enum.exe.config
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\bin\Debug\06_Enum.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\bin\Debug\06_Enum.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\obj\Debug\06_Enum.csproj.AssemblyReference.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\obj\Debug\06_Enum.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\obj\Debug\06_Enum.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\obj\Debug\06_Enum.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\06_Enum\06_Enum\obj\Debug\06_Enum.exe.config
