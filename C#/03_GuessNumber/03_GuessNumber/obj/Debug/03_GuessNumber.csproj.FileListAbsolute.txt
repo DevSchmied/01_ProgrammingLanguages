@@ -1,0 +1,7 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\bin\Debug\03_GuessNumber.exe.config
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\bin\Debug\03_GuessNumber.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\bin\Debug\03_GuessNumber.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\obj\Debug\03_GuessNumber.csproj.AssemblyReference.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\obj\Debug\03_GuessNumber.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\obj\Debug\03_GuessNumber.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\03_GuessNumber\03_GuessNumber\obj\Debug\03_GuessNumber.pdb
