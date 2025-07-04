@@ -1,0 +1,40 @@
+codiere(char text[], char subtext1[], char subtext2[]){
+    für(int zaehler = 0; zaehler<100; zaehler = zaehler +2){
+        int hilfe = 0
+        subtext1[hilfe] = text[i]
+        hilfe = hilfe + 1
+    }
+
+    für(int zaehler = 1; zaehler<100; zaehler = zaehler +2){
+        int hilfe = 0
+        subtext2[hilfe] = text[i]
+        hilfe = hilfe + 1
+    }
+}
+
+decodiere(char subtext1[], char subtext2[], char text[]){
+    für(int zaehler = 0; zaehler<100; zaehler = zaehler +2){
+        int hilfe = 0
+        text[i] = subtext1[hilfe] 
+        hilfe = hilfe + 1
+    }
+
+    für(int zaehler = 1; zaehler<100; zaehler = zaehler +2){
+        int hilfe = 0
+        text[i] = subtext1[hilfe] 
+        hilfe = hilfe + 1
+    }
+}
+
+
+a_05_01_04_sv01
+{
+    char text[101]
+    char subtext1[51]
+    char subtext2[51]
+
+    codiere(text, subtext1, subtext2)
+
+    decodiere(subtext1,subtext2,text)
+
+}
