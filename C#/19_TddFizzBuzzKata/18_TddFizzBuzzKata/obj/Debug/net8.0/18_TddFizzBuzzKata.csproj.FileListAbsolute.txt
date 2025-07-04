@@ -1,0 +1,11 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\bin\Debug\net8.0\18_TddFizzBuzzKata.deps.json
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\bin\Debug\net8.0\18_TddFizzBuzzKata.dll
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\bin\Debug\net8.0\18_TddFizzBuzzKata.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.AssemblyInfoInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.AssemblyInfo.cs
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.dll
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\refint\18_TddFizzBuzzKata.dll
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\18_TddFizzBuzzKata.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\18_TddFizzBuzzKata\18_TddFizzBuzzKata\obj\Debug\net8.0\ref\18_TddFizzBuzzKata.dll
