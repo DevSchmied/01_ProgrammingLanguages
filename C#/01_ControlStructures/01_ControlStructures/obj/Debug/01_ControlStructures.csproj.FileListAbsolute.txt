@@ -1,0 +1,7 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\bin\Debug\01_ControlStructures.exe.config
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\bin\Debug\01_ControlStructures.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\bin\Debug\01_ControlStructures.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\obj\Debug\01_ControlStructures.csproj.AssemblyReference.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\obj\Debug\01_ControlStructures.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\obj\Debug\01_ControlStructures.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\01_ControlStructures\01_ControlStructures\obj\Debug\01_ControlStructures.pdb
