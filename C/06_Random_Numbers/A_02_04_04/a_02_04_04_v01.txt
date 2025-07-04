@@ -1,0 +1,19 @@
+programm a_02_04_04_v01
+
+    int zuf1 = (zufallszahl()%(100 - 1 + 1) + 1) + (zufallszahl()%(100 - 1 + 1) + 1 - 100) 
+    int zuf2 = (zufallszahl()%(100 - 1 + 1) + 1) + (zufallszahl()%(100 - 1 + 1) + 1 - 100)
+    int sumVomRoboter = zuf1 + zuf2
+    int sumVomFleisch
+
+    ausgabe("Die erste zufällige Zahl: ", zuf1, ", die zweite Zahl: ", zuf2, ".\n
+             Berechnen Sie und geben Sie die Summe ein: ")
+    
+    sumVomFleisch = eingabe()
+
+    wenn (sumVomRoboter == sumVomFleisch)
+        ausgabe("Glückwunsch!!!")
+    sonst
+        ausgabe("Fehlermeldung: du bist nicht so gut wie ich, Freundchen. Das korrekte Ergebnis ist: ", sumVomRoboter,".")
+
+
+programm_ende
