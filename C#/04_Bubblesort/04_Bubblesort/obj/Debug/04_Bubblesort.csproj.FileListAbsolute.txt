@@ -1,0 +1,7 @@
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\bin\Debug\04_Bubblesort.exe.config
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\bin\Debug\04_Bubblesort.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\bin\Debug\04_Bubblesort.pdb
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\obj\Debug\04_Bubblesort.csproj.AssemblyReference.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\obj\Debug\04_Bubblesort.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\obj\Debug\04_Bubblesort.exe
+C:\Users\Sergey\Desktop\OneDrive - WBSEDU\00_Tage\01_01_Umschulung\86_Verschiedenes\02_Code_GitHub\C#\04_Bubblesort\04_Bubblesort\obj\Debug\04_Bubblesort.pdb
