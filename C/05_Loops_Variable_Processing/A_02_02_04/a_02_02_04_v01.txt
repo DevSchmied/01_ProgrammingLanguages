@@ -1,0 +1,15 @@
+programm a_02_02_04_v01
+    
+    int zähler
+
+    für (zähler = 1; zähler <= 10; zähler = zähler + 1)
+    {
+        ausgeben(zähler)
+
+        wenn(zähler == 10)
+            solange (zähler != 1)
+                zähler = zähler - 1
+                ausgabe(zähler)
+    }
+
+programm_ende
