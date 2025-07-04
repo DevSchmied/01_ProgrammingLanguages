@@ -1,0 +1,16 @@
+
+gesamtpreis(einzelpreis, rabatt, stueckzahl)
+{
+    ausgabe("Der Gesamtpreis beläuft sich auf: ", einzelpreis * stueckzahl * (1.00 - rabatt, "."))
+    return
+}
+
+
+programm a_03_01_04
+
+    float einzelpreis = eingabe(), rabatt = eingabe()
+    int stueckzahl = eingabe()
+
+    gesamtpreis(einzelpreis, rabatt, stueckzahl)
+
+programm_ende
