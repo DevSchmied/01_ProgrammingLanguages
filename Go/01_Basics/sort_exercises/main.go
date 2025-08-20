@@ -103,7 +103,6 @@ func main() {
 
 	/* 6.
 	   Declare a slice of integers numbersDesc containing 1, 4, 2, 5, and 3. Sort the elements in descending order. Use a custom comparison function.
-
 	*/
 
 	fmt.Println("\n------------------Exercise 6------------------")
@@ -131,5 +130,94 @@ func main() {
 	})
 
 	fmt.Println("wordsByLength after sort by their length (from shortest to longest): ", wordsByLength)
+
+	repeat()
+
+}
+
+func repeat() {
+	/*
+			1. Declare a slice of integers numbers containing the elements 5, 2, 9, 1, and 3. Sort this slice
+		in ascending order.
+	*/
+	fmt.Println("\n\n----------------------repeat()----------------------")
+
+	numbers := []int{5, 2, 9, 1, 3}
+
+	sort.Ints(numbers)
+
+	fmt.Println("numbers: ", numbers)
+
+	/*
+	   2. Declare a slice of integers numbersSorted containing the elements 1, 2, 3, 4, and 5.
+	   Check whether this slice is sorted in ascending order. Save the result in the variable isSorted.
+	*/
+
+	numbersSorted := []int{1, 2, 3, 4, 5}
+	isSorted := sort.IntsAreSorted(numbersSorted)
+
+	fmt.Println("isSorted: ", isSorted)
+	/*
+	   3. Declare a slice of strings words containing "banana", "apple", and "cherry". Sort the strings
+	   in alphabetical order. Check whether this slice is sorted. Save the result in the variable areWordsSorted.
+	*/
+	words := []string{"banana", "apple", "cherry"}
+	sort.Strings(words)
+	areWordsSorted := sort.StringsAreSorted(words)
+
+	fmt.Println("areWordsSorted: ", areWordsSorted)
+	/*
+	   4. Declare a slice of floating-point numbers floats containing 3.1, 2.2, 5.5, and 1.0. Sort the
+	   elements in ascending order. Check whether this slice is sorted. Save the result in the variable areFloatsSorted.
+	*/
+	floats := []float64{3.1, 2.2, 5.5, 1.0}
+	sort.Float64s(floats)
+
+	areFloatsSorted := sort.Float64sAreSorted(floats)
+
+	fmt.Println("areFloatsSorted: ", areFloatsSorted)
+	/*
+	   5. Declare a struct Person with fields Name (string) and Age (integer). Create a slice people
+	   with three elements: Alice (30), Bob (25), Charlie (35). Sort the people by age in ascending order.
+	   Use an anonymous comparison function.
+	*/
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	people := []Person{
+		{"Alice", 30},
+		{"Bob", 25},
+		{"Charlie", 35},
+	}
+
+	sort.Slice(people, func(i, j int) bool {
+		return people[i].Age < people[j].Age
+	})
+
+	fmt.Println("people: ", people)
+	/*
+	   6. Declare a slice of integers numbersDesc containing 1, 4, 2, 5, and 3. Sort the elements in
+	   descending order. Use a custom comparison function.
+	*/
+	numbersDesc := []int{1, 4, 2, 5, 3}
+
+	sort.Slice(numbersDesc, func(i, j int) bool {
+		return numbersDesc[i] > numbersDesc[j]
+	})
+
+	fmt.Println("numbersDesc: ", numbersDesc)
+	/*
+	   7. Declare a slice of strings wordsByLength containing "tree", "go", "algorithm", "hi". Sort the
+	   strings by their length (from shortest to longest). Use a custom comparison function.
+	*/
+	wordsByLength := []string{"tree", "go", "algorithm", "hi"}
+
+	sort.Slice(wordsByLength, func(i, j int) bool {
+		return len(wordsByLength[i]) < len(wordsByLength[j])
+	})
+
+	fmt.Println(wordsByLength)
 
 }
