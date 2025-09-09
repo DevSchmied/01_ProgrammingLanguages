@@ -10,7 +10,7 @@ func printHeader(n int) {
 }
 
 func main() {
-	fmt.Println("------------------------------Slice exercises in Go------------------------------\n")
+	fmt.Println("------------------------------Slice exercises in Go------------------------------")
 
 	// 1. Declare a slice nums1 of type int with elements 1, 2, 3, 4.
 	//    Determine its length and print the length to the screen.
@@ -118,7 +118,7 @@ func main() {
 	repeat()
 }
 func repeat() {
-	fmt.Println("\n\n------------------------------Repeat slice exercises in Go------------------------------\n")
+	fmt.Println("\n\n------------------------------Repeat slice exercises in Go------------------------------")
 
 	// 1. Declare a slice nums1 of type int with elements 1, 2, 3, 4.
 	//    Determine its length and print the length to the screen.
