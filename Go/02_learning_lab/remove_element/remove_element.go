@@ -23,6 +23,15 @@ func main() {
 	nums2 := []int{0, 1, 2, 2, 3, 0, 4, 2}
 	val2 := 2
 	fmt.Println("k = ", removeElement(nums2, val2))
+
+	fmt.Println("----------repeat()----------")
+	nums3 := []int{0, 1, 2, 2, 3, 0, 4, 2}
+	val3 := 2
+	fmt.Printf("nums3 before removal: %v\n", nums3)
+	k := repeatRemoveElement(nums3, val3)
+	fmt.Printf("nums3 after removal: %v\n", nums3[:k])
+	fmt.Println("Number of elements (k):", k)
+
 }
 
 func removeElement(nums []int, val int) int {
@@ -34,5 +43,18 @@ func removeElement(nums []int, val int) int {
 		}
 	}
 	fmt.Println("nums:", nums)
+	return k
+}
+
+func repeatRemoveElement(nums []int, val int) int {
+	var k = 0
+
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != val {
+			nums[k] = nums[i]
+			k++
+		}
+	}
+
 	return k
 }
