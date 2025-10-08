@@ -30,13 +30,24 @@ Inside this function:
 - Return the wrapped error.
 - If no error occurs, return nil.
 
+Step 3 — Compare wrapped errors
+In your main() function:
+- Call loadConfig().
+- If an error is returned, check whether it’s the “filename is missing” error.
+- If so, print "Please provide a filename!".
+- Otherwise, print the error message.
+
+
 */
+
+// global error
+var ErrFilenameMissing = errors.New("filename is missing")
 
 // Step 1
 // readFile simulates reading a file and returns different errors or success messages.
 func readFile(name string) (string, error) {
 	if name == "" {
-		return "", errors.New("filename is missing")
+		return "", ErrFilenameMissing
 	} else if name == "config.txt" {
 		return "file loaded successfully", nil
 	} else {
@@ -104,4 +115,14 @@ func main() {
 		fmt.Println("Error:", err)
 	}
 
+	// Step 3
+
+	err = loadConfig("")
+	if err != nil {
+		if errors.Is(err, ErrFilenameMissing) {
+			fmt.Println("Please provide a filename!")
+		} else {
+			fmt.Printf("Error message: %v\n", err)
+		}
+	}
 }
