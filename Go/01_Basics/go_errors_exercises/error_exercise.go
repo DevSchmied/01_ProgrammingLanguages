@@ -52,6 +52,18 @@ Demonstrate how to unwrap multiple levels of wrapped errors:
 - Retrieve the original base error step by step.
 - Print each level to show the unwrapping process.
 
+Step 6 — Trigger and handle a panic
+Write a function
+Inside this function:
+- catch a possible panic.
+- If a panic is caught, print a message.
+Then, in the main body of this function:
+- Trigger a panic in one case.
+- Otherwise, print a normal result or message.
+In the main():
+1.	Call the function.
+2.	After that, print another message such as "Program continues" to show that execution was restored.
+
 */
 
 // global error
@@ -92,6 +104,23 @@ func (nErr *NetworkError) Error() string {
 // Function that returns a wrapped custom error
 func connectServer() error {
 	return fmt.Errorf("Connection failed: %w", &NetworkError{404})
+}
+
+// Step 6
+func safeDivide(a, b float64) {
+	// Ensure recovery if something goes wrong
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered from panic:", r)
+		}
+	}()
+
+	// Cause an error if input is invalid
+	if b == 0 {
+		panic("Division by zero")
+	}
+
+	fmt.Println("The result: ", a/b)
 }
 
 func main() {
@@ -189,4 +218,11 @@ func main() {
 	// Unwrap again to get the original base error
 	unwrappedTwice := errors.Unwrap(unwrappedOnce)
 	fmt.Printf("After second unwrapping (base error): %v\n", unwrappedTwice)
+
+	// Step 6
+	// Call the function with valid and invalid inputs
+	safeDivide(8, 2)
+	safeDivide(10, 0)
+
+	fmt.Println("The programm continues.")
 }
