@@ -45,6 +45,13 @@ Step 4 — Create and extract a custom error with errors.As()
   • In main(), call the function and extract the custom error type.
   • If extraction is successful, print the error code.
 
+Step 5 — Unwrap a chained error
+Demonstrate how to unwrap multiple levels of wrapped errors:
+- Create a base error.
+- Wrap it multiple times.
+- Retrieve the original base error step by step.
+- Print each level to show the unwrapping process.
+
 */
 
 // global error
@@ -162,4 +169,24 @@ func main() {
 		// Extraction failed — print a fallback message
 		fmt.Println("No NetworkError found.")
 	}
+
+	// Step 5
+	// Create the base error
+	baseErr := errors.New("base error")
+
+	// Wrap the base error at level 1
+	wrappedLevel1 := fmt.Errorf("wrapped level 1: %w", baseErr)
+	fmt.Printf("Wrapped Level 1: %v\n", wrappedLevel1)
+
+	// Wrap the error again at level 2
+	wrappedLevel2 := fmt.Errorf("wrapped level 2: %w", wrappedLevel1)
+	fmt.Printf("Wrapped Level 2: %v\n", wrappedLevel2)
+
+	// Unwrap the second level
+	unwrappedOnce := errors.Unwrap(wrappedLevel2)
+	fmt.Printf("After first unwrapping: %v\n", unwrappedOnce)
+
+	// Unwrap again to get the original base error
+	unwrappedTwice := errors.Unwrap(unwrappedOnce)
+	fmt.Printf("After second unwrapping (base error): %v\n", unwrappedTwice)
 }
