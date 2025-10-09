@@ -37,6 +37,13 @@ In your main() function:
 - If so, print "Please provide a filename!".
 - Otherwise, print the error message.
 
+Step 4 — Create and extract a custom error with errors.As()
+- Define a custom error type.
+- Implement the Error() method so that it returns a message.
+- Then, in a separate function:
+  • Return a wrapped error.
+  • In main(), call the function and extract the custom error type.
+  • If extraction is successful, print the error code.
 
 */
 
@@ -62,6 +69,22 @@ func loadConfig(name string) error {
 		return fmt.Errorf("failed to load configuration: %w", err)
 	}
 	return nil
+}
+
+// Step 4
+// Custom error type
+type NetworkError struct {
+	Code int
+}
+
+// The Error() method so that it returns a message
+func (nErr *NetworkError) Error() string {
+	return fmt.Sprintf("Network error with code %d", nErr.Code)
+}
+
+// Function that returns a wrapped custom error
+func connectServer() error {
+	return fmt.Errorf("Connection failed: %w", &NetworkError{404})
 }
 
 func main() {
@@ -124,5 +147,19 @@ func main() {
 		} else {
 			fmt.Printf("Error message: %v\n", err)
 		}
+	}
+
+	// Step 4
+	// Call the function that may return a wrapped error
+	err = connectServer()
+
+	// Try to extract the custom error type from the error chain
+	var netErr *NetworkError
+	if errors.As(err, &netErr) {
+		// Extraction successful — print the error code
+		fmt.Printf("The extraction was successful. Error code: %d\n", netErr.Code)
+	} else {
+		// Extraction failed — print a fallback message
+		fmt.Println("No NetworkError found.")
 	}
 }
