@@ -64,6 +64,12 @@ In the main():
 1.	Call the function.
 2.	After that, print another message such as "Program continues" to show that execution was restored.
 
+Step 7 — Recover after panic in a simple operation
+- Write a small program with one function that performs a simple calculation.
+- If an invalid input is detected, trigger a panic.
+- Make sure the program recovers and prints a message after recovery.
+- Then show in main() that the program continues normally.
+
 */
 
 // global error
@@ -121,6 +127,21 @@ func safeDivide(a, b float64) {
 	}
 
 	fmt.Println("The result: ", a/b)
+}
+
+// Step 7
+func checkNumber(n int) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered:", r)
+		}
+	}()
+
+	if n < 0 {
+		panic("Negative number not allowed")
+	}
+
+	fmt.Println("Number is valid:", n)
 }
 
 func main() {
@@ -225,4 +246,10 @@ func main() {
 	safeDivide(10, 0)
 
 	fmt.Println("The programm continues.")
+
+	// Step 7
+	checkNumber(5)
+	checkNumber(-3)
+
+	fmt.Println("Program continues after recovery.")
 }
