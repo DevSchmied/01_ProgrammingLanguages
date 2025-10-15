@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+// Task 3
+type Person struct {
+	ID   int
+	Name string
+}
+
 func main() {
 
 	/*
@@ -54,4 +60,35 @@ func main() {
 
 	fmt.Printf("Value of strPtr (stored address): %p\n", strPtr)
 	fmt.Printf("Value pointed to by strPtr: %s\n", *strPtr)
+
+	/*
+		Task 3 — Struct Pointer
+		-	Define a simple struct with at least two fields.
+		-	Declare a variable of that struct type.
+		-	Declare a pointer variable to that struct type.
+		-	Assign values to the struct fields.
+		-	Assign the address of the struct variable to the pointer.
+		-	Print the struct variable.
+		-	Print the address of the struct variable.
+		-	Print the pointer variable.
+		-	Print the value stored at the address the pointer points to.
+	*/
+
+	fmt.Println()
+	fmt.Println("---------------------Task 3---------------------")
+
+	fmt.Println()
+	fmt.Println("--------------------- Task 3 ---------------------")
+
+	var person1 Person
+	var person1Ptr *Person
+
+	person1.ID = 1
+	person1.Name = "Max Mustermann"
+	person1Ptr = &person1
+
+	fmt.Printf("Struct variable: %v\n", person1)
+	fmt.Printf("Address of struct: %p\n", &person1)
+	fmt.Printf("Pointer variable: %p\n", person1Ptr)
+	fmt.Printf("Value pointed to by pointer: %v\n", *person1Ptr)
 }
