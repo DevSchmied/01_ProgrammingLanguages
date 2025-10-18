@@ -70,6 +70,16 @@ Step 7 — Recover after panic in a simple operation
 - Make sure the program recovers and prints a message after recovery.
 - Then show in main() that the program continues normally.
 
+Step 8 — Handle Errors Concurrently with Goroutines and Channels
+Write a function:
+- func downloadFiles(names []string) error
+Requirements:
+- Start a goroutine for each filename that calls readFile(name).
+- Collect errors in a buffered channel.
+- After all goroutines finish, check:
+- If at least one error occurred → return a formatted combined error listing all failed filenames.
+- Otherwise → return nil.
+
 */
 
 // global error
@@ -142,6 +152,36 @@ func checkNumber(n int) {
 	}
 
 	fmt.Println("Number is valid:", n)
+}
+
+// Step 8
+// downloadFiles runs readFile() concurrently and returns an error if any fail.
+func downloadFiles(names []string) error {
+	errCh := make(chan string, len(names)) // channel to collect failed filenames
+	var wg sync.WaitGroup
+
+	for _, name := range names {
+		wg.Add(1)
+		go func(n string) {
+			defer wg.Done()
+			if _, err := readFile(n); err != nil {
+				errCh <- n // send the failed filename to the channel
+			}
+		}(name)
+	}
+
+	wg.Wait()
+	close(errCh)
+
+	var failed []string
+	for name := range errCh {
+		failed = append(failed, name)
+	}
+
+	if len(failed) > 0 {
+		return fmt.Errorf("failed to download files: %v", failed)
+	}
+	return nil
 }
 
 func main() {
@@ -252,4 +292,12 @@ func main() {
 	checkNumber(-3)
 
 	fmt.Println("Program continues after recovery.")
+
+	// Step 8
+	files := []string{"config.txt", "", "foo.txt"}
+	if err := downloadFiles(files); err != nil {
+		fmt.Println("Download error:", err)
+	} else {
+		fmt.Println("All files downloaded successfully!")
+	}
 }
