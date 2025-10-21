@@ -60,5 +60,9 @@ func main() {
 	}
 	fmt.Println("Database connection successful.")
 
-	_ = db
+	// 2. Auto-migrate the schema
+	if err := db.AutoMigrate(&Movie{}); err != nil {
+		log.Fatalf("Failed to migrate database: %v", err)
+	}
+	fmt.Println("Database migration completed.")
 }
