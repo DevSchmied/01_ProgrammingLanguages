@@ -65,4 +65,23 @@ func main() {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
 	fmt.Println("Database migration completed.")
+
+	// 3. Add movies
+	movie1 := &Movie{
+		Title:    "Inception",
+		Director: "Christopher Nolan",
+		Year:     2010,
+		Rating:   8.8,
+	}
+
+	movie2 := &Movie{
+		Title:    "The Matrix",
+		Director: "Lana & Lilly Wachowski",
+		Year:     1999,
+		Rating:   8.7,
+	}
+
+	db.Create(&movie1)
+	db.Create(&movie2)
+	fmt.Println("Two movies added to the database.")
 }
