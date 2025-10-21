@@ -84,4 +84,19 @@ func main() {
 	db.Create(&movie1)
 	db.Create(&movie2)
 	fmt.Println("Two movies added to the database.")
+
+	// 4. Read and print all movies
+	var allMovies []Movie
+	if err := db.Find(&allMovies).Error; err != nil {
+		log.Println("Error reading movies:", err)
+	}
+	fmt.Println("\nAll movies before update:")
+	for _, m := range allMovies {
+		fmt.Printf("→ [%d] %s (%d) — Rating: %.1f\n", m.ID, m.Title, m.Year, m.Rating)
+	}
+
+	// 5. Update the rating of one movie
+	db.Model(&movie1).Update("rating", 9.9)
+	fmt.Printf("\nUpdated rating for '%s' to %.1f.\n", movie1.Title, 9.9)
+
 }
