@@ -99,4 +99,17 @@ func main() {
 	db.Model(&movie1).Update("rating", 9.9)
 	fmt.Printf("\nUpdated rating for '%s' to %.1f.\n", movie1.Title, 9.9)
 
+	// 6. Read again and print updated list
+	var updatedMovies []Movie
+	db.Find(&updatedMovies)
+	fmt.Println("\nAll movies after update:")
+	for _, m := range updatedMovies {
+		fmt.Printf("→ [%d] %s (%d) — Rating: %.1f\n", m.ID, m.Title, m.Year, m.Rating)
+	}
+
+	// 7. Soft delete and hard delete
+	db.Delete(&movie1)            // Soft delete
+	db.Unscoped().Delete(&movie2) // Hard delete
+	fmt.Println("\nDeleted one movie (soft) and one permanently (hard).")
+
 }
