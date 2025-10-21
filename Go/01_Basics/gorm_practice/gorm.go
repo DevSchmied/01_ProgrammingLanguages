@@ -31,8 +31,11 @@ Requirements:
 */
 
 import (
+	"fmt"
+	"log"
 	"time"
 
+	"github.com/glebarez/sqlite"
 	"gorm.io/gorm"
 )
 
@@ -46,4 +49,16 @@ type Movie struct {
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt `gorm:"index"`
+}
+
+func main() {
+
+	// 1. Connect to SQLite database
+	db, err := gorm.Open(sqlite.Open("movies.db"), &gorm.Config{})
+	if err != nil {
+		log.Fatal("Failed to connect to database.")
+	}
+	fmt.Println("Database connection successful.")
+
+	_ = db
 }
