@@ -19,5 +19,12 @@ func main() {
 	fmt.Print("Enter some text: ")
 	text, _ := reader.ReadString('\n')
 
-	fmt.Println("You entered:", text)
+	// save to file
+	err := os.WriteFile("output.txt", []byte(text), 0644)
+	if err != nil {
+		fmt.Println("Error writing file:", err)
+		return
+	}
+
+	fmt.Println("Text saved to output.txt")
 }
