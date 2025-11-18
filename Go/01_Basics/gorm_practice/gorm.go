@@ -111,5 +111,4 @@ func main() {
 	db.Delete(&movie1)            // Soft delete
 	db.Unscoped().Delete(&movie2) // Hard delete
 	fmt.Println("\nDeleted one movie (soft) and one permanently (hard).")
-
 }
