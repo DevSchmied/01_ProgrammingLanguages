@@ -51,5 +51,5 @@ func main() {
 		numbers = append(numbers, num)
 	}
 
-	fmt.Println("Parsed numbers:", numbers)
+	fmt.Printf("Average: %0.2f\n", average(numbers...))
 }
