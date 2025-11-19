@@ -28,9 +28,16 @@ Note:
 To execute the program correctly, you must pass at least one numeric argument.
 
 Example:
-
 go run main.go 12.5 30 55.1
 */
+
+func average(numbers ...float64) float64 {
+	var sum float64
+	for _, n := range numbers {
+		sum += n
+	}
+	return sum / float64(len(numbers))
+}
 
 func main() {
 	args := os.Args[1:]
