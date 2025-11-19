@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
+	"strconv"
 )
 
 /*
@@ -21,9 +23,26 @@ Your program must:
 Since average expects a variadic list of float64, you must use the slice-expansion syntax (slice...).
 6. Print the result with two decimal places.
 7. The implementation must be split into several logically structured steps so that they can be committed separately.
+
+Note:
+To execute the program correctly, you must pass at least one numeric argument.
+
+Example:
+
+go run main.go 12.5 30 55.1
 */
 
 func main() {
 	args := os.Args[1:]
-	fmt.Println("Arguments:", args)
+	var numbers []float64
+
+	for _, arg := range args {
+		num, err := strconv.ParseFloat(arg, 64)
+		if err != nil {
+			log.Fatal(err)
+		}
+		numbers = append(numbers, num)
+	}
+
+	fmt.Println("Parsed numbers:", numbers)
 }
