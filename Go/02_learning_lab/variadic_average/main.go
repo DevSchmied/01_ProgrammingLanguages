@@ -52,6 +52,8 @@ func main() {
 	}
 
 	fmt.Printf("Average: %0.2f\n", average(numbers...))
+
+	fmt.Printf("Minimum: %0.2f\n", min(numbers...))
 }
 
 /*
