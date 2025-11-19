@@ -53,3 +53,33 @@ func main() {
 
 	fmt.Printf("Average: %0.2f\n", average(numbers...))
 }
+
+/*
+Assignment:
+Extend the previous program by adding a new function:
+
+1) Create a function min(numbers ...float64) float64
+This function should return the smallest value from a variadic list of float64 numbers.
+
+2) Update the program to call this new function
+After calculating and printing the average, also print the minimum value from the same slice by using slice expansion (numbers...).
+
+Note:
+
+Run the program with numeric command-line arguments, for example:
+go run main.go 10 5 22.3 7
+*/
+
+func min(numbers ...float64) float64 {
+	if len(numbers) == 0 {
+		return 0
+	}
+
+	minValue := numbers[0]
+	for _, n := range numbers[1:] {
+		if n < minValue {
+			minValue = n
+		}
+	}
+	return minValue
+}
