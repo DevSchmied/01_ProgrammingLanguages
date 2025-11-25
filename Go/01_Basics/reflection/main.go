@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"reflect"
+)
+
 /*
 TASK:
 
@@ -17,5 +22,13 @@ type User struct {
 }
 
 func main() {
+	u1 := User{"Bob"}
 
+	v := reflect.ValueOf(u1)
+	fmt.Println("Value of the object u1:", v)
+
+	fmt.Println(v.FieldByName("Name"))
+
+	t := reflect.TypeOf(u1)
+	fmt.Println("Type of the object u1:", t)
 }
