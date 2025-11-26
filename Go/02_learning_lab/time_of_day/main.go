@@ -47,10 +47,6 @@ func GetTimeOfDay(hour int) string {
 		return "Error: Invalid input"
 	}
 
-	if hour < 0 || hour > 23 {
-		return "Error: Invalid input"
-	}
-
 	if hour >= 0 && hour <= 5 {
 		return "Night"
 	}
@@ -70,9 +66,34 @@ func GetTimeOfDay(hour int) string {
 	return "" // technically unreachable
 }
 
+func GetTimeOfDay2(hour int) string {
+
+	switch {
+	case hour < 0 || hour > 23:
+		return "Error: Invalid input"
+	case hour >= 0 && hour <= 5:
+		return "Night"
+	case hour >= 6 && hour <= 11:
+		return "Morning"
+	case hour >= 12 && hour <= 17:
+		return "Day"
+	case hour >= 18 && hour <= 23:
+		return "Evening"
+	default:
+		return ""
+	}
+}
+
 func main() {
+	fmt.Println("----------- if else version -----------")
 	fmt.Println(GetTimeOfDay(3))
 	fmt.Println(GetTimeOfDay(7))
 	fmt.Println(GetTimeOfDay(15))
 	fmt.Println(GetTimeOfDay(20))
+
+	fmt.Println("----------- switch case version -----------")
+	fmt.Println(GetTimeOfDay2(3))
+	fmt.Println(GetTimeOfDay2(7))
+	fmt.Println(GetTimeOfDay2(15))
+	fmt.Println(GetTimeOfDay2(20))
 }
