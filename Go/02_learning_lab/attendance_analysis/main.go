@@ -192,4 +192,22 @@ func PrintResults(analyzeAttendanceResult *AnalyzeAttendanceResult) {
 
 func main() {
 
+	fmt.Println("=== Example 1 ===")
+	ex1 := []string{"5", "1 3", "2 7", "3 12", "4 0", "5 10"}
+	r1 := AnalyzeAttendance(ex1)
+	PrintResults(r1)
+
+	fmt.Println()
+
+	fmt.Println("=== Example 2 ===")
+	ex2 := []string{"3", "2 -5", "3 10", "5 -10"}
+	r2 := AnalyzeAttendance(ex2)
+	PrintResults(r2)
+
+	fmt.Println()
+
+	fmt.Println("=== Example 3 ===")
+	ex3 := []string{"2", "1 0", "2 0"}
+	r3 := AnalyzeAttendance(ex3)
+	PrintResults(r3)
 }
