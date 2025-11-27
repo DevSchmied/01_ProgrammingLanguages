@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -173,6 +174,19 @@ func AnalyzeAttendance(data []string) *AnalyzeAttendanceResult {
 
 // PrintResults prints the analysis results.
 func PrintResults(analyzeAttendanceResult *AnalyzeAttendanceResult) {
+	if analyzeAttendanceResult.Valid < 0 {
+		fmt.Println("no valid data")
+		return
+	}
+
+	avg := (float64)(analyzeAttendanceResult.TotalLessons) / (float64)(analyzeAttendanceResult.TotalStudents)
+
+	fmt.Printf("Total students: %d\n", analyzeAttendanceResult.TotalStudents)
+	fmt.Printf("Total classes: %d\n", analyzeAttendanceResult.TotalLessons)
+	fmt.Printf("Average classes: %.1f\n", avg)
+	fmt.Printf("Low attendance (<5): %d students\n", analyzeAttendanceResult.Low)
+	fmt.Printf("Medium attendance (5-9): %d students\n", analyzeAttendanceResult.Medium)
+	fmt.Printf("High attendance (>=10): %d students\n", analyzeAttendanceResult.High)
 
 }
 
