@@ -1,5 +1,10 @@
 package main
 
+import (
+	"strconv"
+	"strings"
+)
+
 /*
 TASK — Attendance Statistics Analysis
 
@@ -111,7 +116,59 @@ type AnalyzeAttendanceResult struct {
 
 // AnalyzeAttendance analyzes the attendance data.
 func AnalyzeAttendance(data []string) *AnalyzeAttendanceResult {
-	return nil
+
+	if len(data) < 2 {
+		return &AnalyzeAttendanceResult{Valid: -1}
+	}
+
+	n, err := strconv.Atoi(strings.TrimSpace(data[0]))
+	if err != nil || n <= 1 || n >= 100 {
+		return &AnalyzeAttendanceResult{Valid: -1}
+	}
+
+	if len(data)-1 < n {
+		return &AnalyzeAttendanceResult{Valid: -1}
+	}
+
+	var totalStd int
+	var totalLes int
+	var low int
+	var medium int
+	var high int
+
+	for i := 1; i <= n; i++ {
+		splStr := strings.Split(data[i], " ")
+
+		firstEl, err1 := strconv.Atoi(splStr[0])
+		secEl, err2 := strconv.Atoi(splStr[1])
+
+		if err1 != nil || err2 != nil {
+			return &AnalyzeAttendanceResult{Valid: -1}
+		}
+
+		if firstEl <= 0 || secEl < 0 {
+			return &AnalyzeAttendanceResult{Valid: -1}
+		}
+		totalStd++
+		totalLes += secEl
+
+		switch {
+		case secEl >= 0 && secEl < 5:
+			low++
+		case secEl >= 5 && secEl < 10:
+			medium++
+		case secEl >= 10:
+			high++
+		}
+	}
+	return &AnalyzeAttendanceResult{
+		TotalStudents: totalStd,
+		TotalLessons:  totalLes,
+		Low:           low,
+		Medium:        medium,
+		High:          high,
+		Valid:         1,
+	}
 }
 
 // PrintResults prints the analysis results.
