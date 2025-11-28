@@ -179,7 +179,10 @@ func PrintResults(analyzeAttendanceResult *AnalyzeAttendanceResult) {
 		return
 	}
 
-	avg := (float64)(analyzeAttendanceResult.TotalLessons) / (float64)(analyzeAttendanceResult.TotalStudents)
+	avg := 0.0
+	if analyzeAttendanceResult.TotalStudents > 0 {
+		avg = float64(analyzeAttendanceResult.TotalLessons) / float64(analyzeAttendanceResult.TotalStudents)
+	}
 
 	fmt.Printf("Total students: %d\n", analyzeAttendanceResult.TotalStudents)
 	fmt.Printf("Total classes: %d\n", analyzeAttendanceResult.TotalLessons)
