@@ -17,3 +17,11 @@ func TestAnalyzeAttendance_InvalidNFormat(t *testing.T) {
 		t.Errorf("expected invalid result for non-numeric N")
 	}
 }
+
+func TestAnalyzeAttendance_NotEnoughLines(t *testing.T) {
+	data := []string{"3", "1 2", "2 3"}
+	r := AnalyzeAttendance(data)
+	if r.Valid != -1 {
+		t.Errorf("expected invalid result when data lines are fewer than N")
+	}
+}
