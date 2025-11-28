@@ -138,10 +138,14 @@ func AnalyzeAttendance(data []string) *AnalyzeAttendanceResult {
 	var high int
 
 	for i := 1; i <= n; i++ {
-		splStr := strings.Split(data[i], " ")
 
-		firstEl, err1 := strconv.Atoi(splStr[0])
-		secEl, err2 := strconv.Atoi(splStr[1])
+		fields := strings.Fields(data[i])
+		if len(fields) != 2 {
+			return &AnalyzeAttendanceResult{Valid: -1}
+		}
+
+		firstEl, err1 := strconv.Atoi(fields[0])
+		secEl, err2 := strconv.Atoi(fields[1])
 
 		if err1 != nil || err2 != nil {
 			return &AnalyzeAttendanceResult{Valid: -1}
@@ -150,6 +154,7 @@ func AnalyzeAttendance(data []string) *AnalyzeAttendanceResult {
 		if firstEl <= 0 || secEl < 0 {
 			return &AnalyzeAttendanceResult{Valid: -1}
 		}
+
 		totalStd++
 		totalLes += secEl
 
