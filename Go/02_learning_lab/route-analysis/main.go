@@ -195,3 +195,71 @@ func AnalyzeRoutes(routes []Route) RouteStat {
 
 	return routeStat
 }
+
+func main() {
+
+	// ===== Example 1 =====
+	routes1 := []Route{
+		{From: "Moscow", To: "SPb"},
+		{From: "SPb", To: "Moscow"},
+		{From: "Moscow", To: "SPb"},
+		{From: "Kazan", To: "Moscow"},
+		{From: "Moscow", To: "SPb"},
+		{From: "Kazan", To: "Moscow"},
+		{From: "Kazan", To: "Moscow"},
+	}
+
+	stat1 := AnalyzeRoutes(routes1)
+
+	if stat1.UniqueCount == 0 && stat1.MaxRoutesCount == 0 && len(stat1.MaxRoutes) == 0 {
+		fmt.Println("invalid data")
+		fmt.Println()
+	} else {
+		for _, r := range stat1.MaxRoutes {
+			fmt.Printf("%s %s: %d\n", r.From, r.To, stat1.MaxRoutesCount)
+		}
+		fmt.Printf("Unique routes: %d\n", stat1.UniqueCount)
+		fmt.Printf("Routes with one shipment: %d\n\n", stat1.Once)
+	}
+
+	// ===== Example 2 =====
+	routes2 := []Route{
+		{From: "Moscow", To: "SPb"},
+		{From: "SPb", To: "Moscow"},
+		{From: "Kazan", To: "Moscow"},
+		{From: "Moscow", To: "SPb"},
+		{From: "Kazan", To: "SPb"},
+	}
+
+	stat2 := AnalyzeRoutes(routes2)
+
+	if stat2.UniqueCount == 0 && stat2.MaxRoutesCount == 0 && len(stat2.MaxRoutes) == 0 {
+		fmt.Println("invalid data")
+		fmt.Println()
+	} else {
+		for _, r := range stat2.MaxRoutes {
+			fmt.Printf("%s %s: %d\n", r.From, r.To, stat2.MaxRoutesCount)
+		}
+		fmt.Printf("Unique routes: %d\n", stat2.UniqueCount)
+		fmt.Printf("Routes with one shipment: %d\n\n", stat2.Once)
+	}
+
+	// ===== Example 3 =====
+	routes3 := []Route{
+		{From: "Moscow", To: ""}, // invalid
+		{From: "SPb", To: "Kazan"},
+	}
+
+	stat3 := AnalyzeRoutes(routes3)
+
+	if stat3.UniqueCount == 0 && stat3.MaxRoutesCount == 0 && len(stat3.MaxRoutes) == 0 {
+		fmt.Println("invalid data")
+		fmt.Println()
+	} else {
+		for _, r := range stat3.MaxRoutes {
+			fmt.Printf("%s %s: %d\n", r.From, r.To, stat3.MaxRoutesCount)
+		}
+		fmt.Printf("Unique routes: %d\n", stat3.UniqueCount)
+		fmt.Printf("Routes with one shipment: %d\n\n", stat3.Once)
+	}
+}
