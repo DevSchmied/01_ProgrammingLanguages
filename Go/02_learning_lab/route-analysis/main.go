@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 /*
 TASK 3 — Delivery Route Analysis
 
@@ -127,10 +132,39 @@ func AnalyzeRoutes(routes []Route) RouteStat {
 
 	// result maps "From To" -> how many times the route occurs
 	result := make(map[string]int)
-	_ = result
+
 	// keys stores the order of the first appearance of each unique route
 	keys := make([]string, 0, len(routes))
-	_ = keys
+
+	// Count occurrences and track order
+	for i := 0; i < len(routes); i++ {
+
+		fromTrimmed := strings.TrimSpace(routes[i].From)
+		toTrimmed := strings.TrimSpace(routes[i].To)
+
+		// Validate city names
+		if len(fromTrimmed) < 1 || len(fromTrimmed) > 20 ||
+			len(toTrimmed) < 1 || len(toTrimmed) > 20 {
+
+			fmt.Println("invalid data")
+			return RouteStat{}
+		}
+
+		key := fromTrimmed + " " + toTrimmed
+
+		// If this route appears for the first time — remember it
+		if _, exists := result[key]; !exists {
+			keys = append(keys, key)
+		}
+
+		// Count the route
+		result[key]++
+	}
+
+	// If somehow no valid routes exist
+	if len(result) == 0 {
+		return RouteStat{}
+	}
 
 	return RouteStat{}
 }
