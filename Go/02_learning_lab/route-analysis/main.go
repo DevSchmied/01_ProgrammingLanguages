@@ -1,0 +1,123 @@
+package main
+
+/*
+TASK 3 — Delivery Route Analysis
+
+You work as a logistician in a transport company. You need to determine:
+
+- Which routes (city pairs “from → to”) were used most frequently
+- How many unique routes there were
+- How many routes occurred exactly once
+
+Input:
+A list of shipments, each represented by a pair of cities (origin → destination).
+
+Output:
+- A list of routes with the maximum number of shipments, each printed in the format:
+	<from> <to>: <count>
+	(If several routes share the same maximum count — print all of them in order of first appearance.)
+- Total number of unique routes
+- Number of routes used exactly once
+- If the input contains any invalid entries, print:
+	invalid data
+
+---
+
+Input Format
+First line: one integer N, where 2 < N < 100 — the number of shipments
+Each of the next N lines contains two city names (strings without spaces), separated by a single space
+Each city name is between 1 and 20 characters
+
+---
+
+Output Format
+First print all routes with the highest shipment count:
+<from> <to>: <count>
+
+(one per line)
+
+Then print:
+Unique routes: <number>
+Routes with one shipment: <number>
+
+If invalid input is detected:
+invalid data
+
+---
+
+Example 1
+
+Input:
+
+7
+Moscow SPb
+SPb Moscow
+Moscow SPb
+Kazan Moscow
+Moscow SPb
+Kazan Moscow
+Kazan Moscow
+
+
+Output:
+
+Moscow SPb: 3
+Unique routes: 3
+Routes with one shipment: 1
+
+---
+
+Example 2
+
+Input:
+
+5
+Moscow SPb
+SPb Moscow
+Kazan Moscow
+Moscow SPb
+Kazan SPb
+
+
+Output:
+
+Moscow SPb: 2
+SPb Moscow: 1
+Kazan Moscow: 1
+Kazan SPb: 1
+Unique routes: 4
+Routes with one shipment: 4
+
+---
+
+Example 3
+
+Input:
+
+2
+Moscow
+SPb Kazan
+
+
+Output:
+
+invalid data
+
+*/
+
+type Route struct {
+	From string
+	To   string
+}
+
+type RouteStat struct {
+	MaxRoutes      []Route
+	MaxRoutesCount int
+	UniqueCount    int
+	Once           int
+}
+
+// AnalyzeRoutes analyzes the list of routes and returns the route statistics.
+func AnalyzeRoutes(routes []Route) RouteStat {
+	return RouteStat{}
+}
