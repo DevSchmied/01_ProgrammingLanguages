@@ -166,5 +166,32 @@ func AnalyzeRoutes(routes []Route) RouteStat {
 		return RouteStat{}
 	}
 
-	return RouteStat{}
+	routeStat := RouteStat{
+		UniqueCount: len(result),
+	}
+
+	// Determine:
+	// 1) the maximum shipment count
+	// 2) how many routes occurred once
+	for _, count := range result {
+		if count > routeStat.MaxRoutesCount {
+			routeStat.MaxRoutesCount = count
+		}
+		if count == 1 {
+			routeStat.Once++
+		}
+	}
+
+	// Build the list of routes with maximum shipments (in order of appearance)
+	for _, key := range keys {
+		if result[key] == routeStat.MaxRoutesCount {
+			parts := strings.SplitN(key, " ", 2)
+			routeStat.MaxRoutes = append(routeStat.MaxRoutes, Route{
+				From: parts[0],
+				To:   parts[1],
+			})
+		}
+	}
+
+	return routeStat
 }
