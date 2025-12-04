@@ -119,5 +119,18 @@ type RouteStat struct {
 
 // AnalyzeRoutes analyzes the list of routes and returns the route statistics.
 func AnalyzeRoutes(routes []Route) RouteStat {
+
+	// Validate number of routes
+	if len(routes) <= 2 || len(routes) >= 100 {
+		return RouteStat{}
+	}
+
+	// result maps "From To" -> how many times the route occurs
+	result := make(map[string]int)
+	_ = result
+	// keys stores the order of the first appearance of each unique route
+	keys := make([]string, 0, len(routes))
+	_ = keys
+
 	return RouteStat{}
 }
