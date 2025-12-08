@@ -62,6 +62,7 @@ no
 */
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -99,4 +100,35 @@ func getBestCandidates(ratingsLine, namesLine string) []string {
 	}
 
 	return results
+}
+
+func main() {
+	fmt.Println("============== Example 1 ==============")
+	res1 := getBestCandidates(
+		"4,6,8,8,5,8,4,7,9,2",
+		"Smith,Johnson,Williams,Brown,Jones,Miller,Davis,Garcia,Rodriguez,Wilson",
+	)
+
+	if res1 == nil {
+		fmt.Println("no")
+	} else {
+		for _, name := range res1 {
+			fmt.Println(name)
+		}
+	}
+
+	fmt.Println("============== Example 2 ==============")
+
+	res2 := getBestCandidates(
+		"7,7,7,7,7",
+		"Dupont,Martin,Bernard,Leroy,Петров",
+	)
+
+	if res2 == nil {
+		fmt.Println("no")
+	} else {
+		for _, name := range res2 {
+			fmt.Println(name)
+		}
+	}
 }
