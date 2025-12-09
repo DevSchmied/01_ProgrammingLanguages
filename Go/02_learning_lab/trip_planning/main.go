@@ -102,3 +102,24 @@ func planTrip(cityList, hotelList string) []string {
 
 	return result
 }
+
+func main() {
+	fmt.Println("==========Execute 1==========")
+	result1 := planTrip(
+		"Paris,London,London,Paris,Lyon,London",
+		"HotelA,HotelB,HotelC,HotelD,HotelE,HotelF",
+	)
+	for _, v := range result1 {
+		fmt.Println(v)
+	}
+
+	fmt.Println("==========Execute 2==========")
+	result2 := planTrip(
+		"Nice,Nice,Nice,Nice,Nice,Bordeaux,Bordeaux,Bordeaux,Bordeaux,Bordeaux",
+		"Negresco1,Negresco2,Negresco3,Negresco4,Negresco5,Regent1,Regent2,Regent3,Regent4,Regent5",
+	)
+	for _, v := range result2 {
+		fmt.Println(v)
+	}
+
+}
