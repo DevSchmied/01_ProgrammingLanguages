@@ -56,3 +56,49 @@ Output:
 Bordeaux 5
 Nice 5
 */
+
+import (
+	"fmt"
+	"log"
+	"sort"
+	"strings"
+)
+
+func planTrip(cityList, hotelList string) []string {
+
+	cities := strings.Split(strings.ToLower(strings.TrimSpace(cityList)), ",")
+	hotels := strings.Split(strings.ToLower(strings.TrimSpace(hotelList)), ",")
+	if len(cities) != len(hotels) || len(cityList) == 0 || len(hotelList) == 0 {
+		log.Printf("invalid input")
+		return nil
+	}
+
+	// Counting number of hotels for each city
+	count := make(map[string]int)
+	for _, c := range cities {
+		count[c]++
+	}
+
+	// Finding the maximum number of hotels
+	var valMax int
+	for _, v := range count {
+		if v > valMax {
+			valMax = v
+		}
+	}
+
+	// Building the result (capitalize city name + count)
+	result := []string{}
+	for k, v := range count {
+		if v == valMax {
+			keyRune := []rune(k)
+			city := strings.ToUpper(string(keyRune[0])) + string(keyRune[1:])
+			result = append(result, fmt.Sprintf("%s %d", city, v))
+		}
+	}
+
+	// Alphabetical sorting
+	sort.Strings(result)
+
+	return result
+}
