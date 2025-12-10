@@ -56,3 +56,64 @@ Output:
 
 (Median = (28 + 34) / 2 = 31)
 */
+
+import (
+	"errors"
+	"sort"
+	"strconv"
+	"strings"
+)
+
+// calculateAgeStatistics returns: min, median, max ages.
+func calculateAgeStatistics(input string) ([]int, error) {
+
+	// Empty input guard
+	if strings.TrimSpace(input) == "" {
+		return nil, errors.New("Input is empty")
+	}
+
+	// Split employees by ';'
+	records := strings.Split(strings.TrimSpace(input), ";")
+	ages := make([]int, 0, len(records))
+
+	for _, record := range records {
+		fields := strings.Split(record, ",")
+		if len(fields) < 2 {
+			return nil, errors.New("Invalid employee format")
+		}
+
+		// Parse age
+		age, err := strconv.Atoi(fields[1])
+		if err != nil || age < 20 || age > 100 {
+			return nil, errors.New("Invalid age value")
+		}
+
+		ages = append(ages, age)
+	}
+
+	sort.Ints(ages)
+
+	if len(ages) == 0 {
+		return nil, errors.New("No age data provided")
+	}
+
+	if len(ages) == 1 {
+		// min = median = max
+		return []int{ages[0], ages[0], ages[0]}, nil
+	}
+
+	// Median calculation
+	var median int
+	if len(ages)%2 == 0 {
+
+		left := ages[len(ages)/2-1]
+		right := ages[len(ages)/2]
+		median = (left + right) / 2
+	} else {
+
+		median = ages[len(ages)/2]
+	}
+
+	// min, median, max
+	return []int{ages[0], median, ages[len(ages)-1]}, nil
+}
