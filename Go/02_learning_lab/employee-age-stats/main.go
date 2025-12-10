@@ -59,6 +59,7 @@ Output:
 
 import (
 	"errors"
+	"fmt"
 	"sort"
 	"strconv"
 	"strings"
@@ -105,15 +106,35 @@ func calculateAgeStatistics(input string) ([]int, error) {
 	// Median calculation
 	var median int
 	if len(ages)%2 == 0 {
-
 		left := ages[len(ages)/2-1]
 		right := ages[len(ages)/2]
 		median = (left + right) / 2
 	} else {
-
 		median = ages[len(ages)/2]
 	}
 
 	// min, median, max
 	return []int{ages[0], median, ages[len(ages)-1]}, nil
+}
+
+func main() {
+	fmt.Println("============= 1. Example =============")
+	ages1, err := calculateAgeStatistics("John,28,Engineering;Alex,34,HR;Dennis,45,Marketing;Anna,30,Engineering;Bob,24,HR")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		for _, v := range ages1 {
+			fmt.Printf("%d ", v)
+		}
+	}
+
+	fmt.Println("\n\n============= 2. Example =============")
+	ages2, err := calculateAgeStatistics("Paul,28,Engineering;Elena,34,Marketing")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		for _, v := range ages2 {
+			fmt.Printf("%d ", v)
+		}
+	}
 }
