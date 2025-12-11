@@ -54,7 +54,25 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
+func twoSumMapSolution(nums []int, target int) []int {
+	m := make(map[int]int)
+
+	for i, num := range nums {
+		need := target - num
+
+		if idx, found := m[need]; found {
+			return []int{i, idx}
+		}
+
+		m[num] = i
+	}
+
+	return nil
+}
+
 func main() {
+
+	fmt.Println("\n==========================Solution 1==========================\n")
 	fmt.Println("=============Example 1=============")
 	nums1 := []int{2, 7, 11, 15}
 	target1 := 9
@@ -69,4 +87,5 @@ func main() {
 	nums3 := []int{3, 3}
 	target3 := 6
 	fmt.Println(twoSum(nums3, target3))
+
 }
