@@ -39,3 +39,15 @@ Constraints:
 -10^9 <= target <= 10^9
 Only one valid answer exists.
 */
+
+func twoSum(nums []int, target int) []int {
+
+	for idx1, num1 := range nums {
+		for i := 1 + idx1; i < len(nums); i++ {
+			if (num1 + nums[i]) == target {
+				return []int{idx1, i}
+			}
+		}
+	}
+	return nil
+}
