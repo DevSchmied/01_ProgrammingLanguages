@@ -88,4 +88,19 @@ func main() {
 	target3 := 6
 	fmt.Println(twoSum(nums3, target3))
 
+	fmt.Println("\n\n==========================Solution 2==========================\n")
+	fmt.Println("=============Example 1=============")
+	nums4 := []int{2, 7, 11, 15}
+	target4 := 9
+	fmt.Println(twoSumMapSolution(nums4, target4))
+
+	fmt.Println("=============Example 2=============")
+	nums5 := []int{3, 2, 4}
+	target5 := 6
+	fmt.Println(twoSumMapSolution(nums5, target5))
+
+	fmt.Println("=============Example 3=============")
+	nums6 := []int{3, 3}
+	target6 := 6
+	fmt.Println(twoSumMapSolution(nums6, target6))
 }
