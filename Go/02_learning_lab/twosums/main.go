@@ -40,6 +40,8 @@ Constraints:
 Only one valid answer exists.
 */
 
+import "fmt"
+
 func twoSum(nums []int, target int) []int {
 
 	for idx1, num1 := range nums {
@@ -50,4 +52,21 @@ func twoSum(nums []int, target int) []int {
 		}
 	}
 	return nil
+}
+
+func main() {
+	fmt.Println("=============Example 1=============")
+	nums1 := []int{2, 7, 11, 15}
+	target1 := 9
+	fmt.Println(twoSum(nums1, target1))
+
+	fmt.Println("=============Example 2=============")
+	nums2 := []int{3, 2, 4}
+	target2 := 6
+	fmt.Println(twoSum(nums2, target2))
+
+	fmt.Println("=============Example 3=============")
+	nums3 := []int{3, 3}
+	target3 := 6
+	fmt.Println(twoSum(nums3, target3))
 }
