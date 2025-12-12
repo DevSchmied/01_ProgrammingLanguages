@@ -252,5 +252,14 @@ func FanIn(out chan<- string, ch1, ch2 <-chan string, done <-chan struct{}) {
 
 // waitChannels waits for both channels to be closed
 func waitChannels(a, b chan struct{}) {
-
+	for a != nil || b != nil {
+		select {
+		case <-a:
+			a = nil
+			continue
+		case <-b:
+			b = nil
+			continue
+		}
+	}
 }
