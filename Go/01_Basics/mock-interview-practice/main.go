@@ -5,10 +5,14 @@ import (
 	"sync"
 )
 
+// Task 3
 var (
 	mTask3 = make(map[string]string)
 	mu     sync.Mutex
 )
+
+// Task 4
+var mTask4 sync.Map
 
 func main() {
 	// Task 1. What will be printed to the console?
@@ -72,6 +76,19 @@ func main() {
 	fmt.Println(GetOrCreate("hello", "world"))
 	fmt.Println(Get("hello"))
 
+	/*
+			Task 4:
+		Implement an additional thread-safe “get or create” function using sync.Map.
+		The new function must provide the same behavior as the existing implementation, ensure correct concurrent access, and guarantee that a value is created only once per key.
+	*/
+
+	fmt.Println()
+	fmt.Println("Task 4")
+
+	fmt.Println(GetOrCreateSyncMap("hello", "world"))
+	fmt.Println(GetOrCreateSyncMap("hello", "world"))
+	fmt.Println(GetOrCreateSyncMap("hello", "you"))
+
 }
 
 // Task 3.
@@ -93,4 +110,19 @@ func Get(key string) string {
 		return v
 	}
 	return ""
+}
+
+// Task 4
+func GetOrCreateSyncMap(key, value string) string {
+	if v, found := mTask4.Load(key); found {
+		str, ok := v.(string)
+		if ok {
+			return str
+		}
+		return ""
+	}
+
+	v, _ := mTask4.LoadOrStore(key, value)
+
+	return v.(string)
 }
