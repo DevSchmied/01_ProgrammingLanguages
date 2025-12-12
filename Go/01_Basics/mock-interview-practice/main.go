@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"sync"
 	"sync/atomic"
 )
@@ -123,6 +124,40 @@ func main() {
 	CountAtomic(&wg, &counter)
 	fmt.Println("counter:", counter)
 
+	/* Task 6.
+	Design a fan-in pattern in Go.
+
+	Implement a function that merges values from two input channels into a single output channel.
+	The function must safely handle channel closure and terminate once all input channels are closed.
+	*/
+	fmt.Println()
+	fmt.Println("Task 6")
+
+	out, ch1, ch2, done :=
+		make(chan string),
+		make(chan string),
+		make(chan string),
+		make(chan struct{})
+
+	go FanIn(out, ch1, ch2, done)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			if i%2 == 0 {
+				ch1 <- strconv.Itoa(i)
+			} else {
+				ch2 <- strconv.Itoa(i)
+			}
+		}
+		close(ch1)
+		close(ch2)
+	}()
+
+	for v := range out {
+		fmt.Println("Caught from output channel:", v)
+	}
+
+	fmt.Println("After closing the output channel")
 }
 
 // Task 3.
@@ -171,4 +206,28 @@ func CountAtomic(wg *sync.WaitGroup, counter *int64) {
 		}()
 	}
 	wg.Wait()
+}
+
+// Task 6
+func FanIn(out chan<- string, ch1, ch2 <-chan string, done <-chan struct{}) {
+	defer close(out)
+
+	for ch1 != nil || ch2 != nil {
+		select {
+		case v1, ok := <-ch1:
+			if !ok {
+				ch1 = nil
+				continue
+			}
+			out <- v1
+		case v2, ok := <-ch2:
+			if !ok {
+				ch2 = nil
+				continue
+			}
+			out <- v2
+		case <-done:
+			return
+		}
+	}
 }
