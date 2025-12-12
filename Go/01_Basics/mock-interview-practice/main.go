@@ -119,6 +119,10 @@ func main() {
 	wg.Wait()
 	fmt.Println("counter:", counter)
 
+	counter = 0
+	CountAtomic(&wg, &counter)
+	fmt.Println("counter:", counter)
+
 }
 
 // Task 3.
@@ -155,4 +159,16 @@ func GetOrCreateSyncMap(key, value string) string {
 	v, _ := mTask4.LoadOrStore(key, value)
 
 	return v.(string)
+}
+
+// Task 5
+func CountAtomic(wg *sync.WaitGroup, counter *int64) {
+	for i := 0; i < 30; i++ {
+		wg.Add(1)
+		go func() {
+			atomic.AddInt64(counter, 1)
+			wg.Done()
+		}()
+	}
+	wg.Wait()
 }
