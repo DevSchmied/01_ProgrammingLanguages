@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 	"sync"
 	"sync/atomic"
+	"time"
 )
 
 // Task 3
@@ -158,6 +160,22 @@ func main() {
 	}
 
 	fmt.Println("After closing the output channel")
+
+	// Task 7.
+	a, b := make(chan struct{}), make(chan struct{})
+
+	go func() {
+		<-time.After(time.Duration(rand.Intn(3)*1000) * time.Millisecond)
+		close(a)
+	}()
+
+	go func() {
+		<-time.After(time.Duration(rand.Intn(3)*1000) * time.Millisecond)
+		close(b)
+	}()
+
+	waitChannels(a, b)
+	fmt.Println("success!")
 }
 
 // Task 3.
@@ -230,4 +248,9 @@ func FanIn(out chan<- string, ch1, ch2 <-chan string, done <-chan struct{}) {
 			return
 		}
 	}
+}
+
+// waitChannels waits for both channels to be closed
+func waitChannels(a, b chan struct{}) {
+
 }
