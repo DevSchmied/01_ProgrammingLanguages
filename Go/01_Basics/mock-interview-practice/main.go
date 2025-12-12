@@ -3,9 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	// Task: What will be printed to the console?
+	// Task 1. What will be printed to the console?
 	// Explain how string iteration works in Go when using range,
 	// especially with UTF-8 encoded characters (runes).
+
+	fmt.Println("Task 1")
 
 	str1 := "hello 🙂💪"
 	str2 := "привет 🙂💪"
@@ -31,4 +33,21 @@ func main() {
 		fmt.Printf("%d: %c\n", i, char)
 	}
 
+	// Task 2. Create a small concurrent program in Go that demonstrates a data race
+	// when multiple goroutines access and modify shared state without proper synchronization.
+
+	fmt.Println("Task 2")
+
+	m := map[int]*int{}
+	val := 0
+	m[0] = &val
+
+	for i := 0; i < 30; i++ {
+		go func(i int) {
+			cur := m[0]
+			*cur += i
+		}(i)
+	}
+
+	fmt.Println(*m[0])
 }
