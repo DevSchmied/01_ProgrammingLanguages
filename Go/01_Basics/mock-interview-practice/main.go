@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"sync/atomic"
 )
 
 // Task 3
@@ -88,6 +89,35 @@ func main() {
 	fmt.Println(GetOrCreateSyncMap("hello", "world"))
 	fmt.Println(GetOrCreateSyncMap("hello", "world"))
 	fmt.Println(GetOrCreateSyncMap("hello", "you"))
+
+	/*
+		Task 5 (Atomic):
+
+		Design a Go program that safely increments a shared counter from multiple concurrent goroutines.
+
+		The program should:
+		- Launch multiple goroutines that all modify the same numeric variable.
+		- Ensure that each goroutine increments the counter exactly once.
+		- Guarantee correct synchronization so that no race conditions occur.
+		- Wait for all goroutines to finish before printing the final result.
+		- Use low-level concurrency primitives suitable for atomic operations.
+		- The expected output is the total number of increments performed by all goroutines.
+	*/
+	fmt.Println()
+	fmt.Println("Task 5")
+
+	var counter int64
+	var wg sync.WaitGroup
+
+	for i := 0; i < 30; i++ {
+		wg.Add(1)
+		go func() {
+			atomic.AddInt64(&counter, 1)
+			wg.Done()
+		}()
+	}
+	wg.Wait()
+	fmt.Println("counter:", counter)
 
 }
 
