@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode — Palindrome Number
 
@@ -59,4 +61,15 @@ func isPalindrome(x int) bool {
 		}
 	}
 	return true
+}
+
+func main() {
+	fmt.Println("============1. Example============")
+	fmt.Println(isPalindrome(121))
+
+	fmt.Println("============2. Example============")
+	fmt.Println(isPalindrome(-121))
+
+	fmt.Println("============3. Example============")
+	fmt.Println(isPalindrome(10))
 }
