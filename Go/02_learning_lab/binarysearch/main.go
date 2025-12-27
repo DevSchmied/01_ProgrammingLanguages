@@ -45,4 +45,5 @@ func main() {
 	target := 9
 
 	fmt.Println("Example 1 result:", search(nums, target)) // expected: 4
+	fmt.Println("Example 2:", search(nums, 2))             // expected: -1
 }
