@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode Problem 704 — Binary Search
 
@@ -39,5 +41,8 @@ func search(nums []int, target int) int {
 }
 
 func main() {
+	nums := []int{-1, 0, 3, 5, 9, 12}
+	target := 9
 
+	fmt.Println("Example 1 result:", search(nums, target)) // expected: 4
 }
