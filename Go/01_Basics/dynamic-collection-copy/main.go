@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 Task: Copying data between dynamic collections
 
@@ -16,3 +18,16 @@ The program should:
 
 The goal is to understand how internal structure and initialization of dynamic collections affect data transfer and memory independence.
 */
+
+func main() {
+	a := []int{5, 6, 7, 8}
+
+	b := make([]int, len(a))
+
+	count := copy(b, a)
+	fmt.Println("count:", count)
+	fmt.Println("b", b)
+
+	c := append([]int(nil), a...)
+	fmt.Println("c", c)
+}
