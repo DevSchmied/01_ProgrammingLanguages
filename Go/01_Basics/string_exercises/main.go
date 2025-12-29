@@ -83,6 +83,38 @@ func main() {
 	fmt.Println("Error as string:", errString)
 
 	repeat()
+
+	//=================================================================
+	//=================================================================
+	//=================================================================
+
+	fmt.Println("=================================================================")
+	fmt.Println("=============================Task 11=============================")
+	fmt.Println("=================================================================")
+
+	str1 := "hello"
+	str2 := "привет"
+
+	for idx, c := range str1 {
+		fmt.Printf("%d: %c\n", idx, c)
+	}
+
+	fmt.Println()
+
+	for idx, c := range str2 {
+		fmt.Printf("%d: %c\n", idx, c)
+	}
+	fmt.Println()
+	fmt.Println([]byte(str1))
+	fmt.Println([]rune(str1))
+	fmt.Println("length str1 as []byte: %d", len([]byte(str1)))
+	fmt.Println("length str1 as []rune: %d", len([]rune(str1)))
+
+	fmt.Println()
+	fmt.Println([]byte(str2))
+	fmt.Println([]rune(str2))
+	fmt.Println("length str2 as []byte: %d", len([]byte(str2)))
+	fmt.Println("length str2 as []rune: %d", len([]rune(str2)))
 }
 
 func repeat() {
