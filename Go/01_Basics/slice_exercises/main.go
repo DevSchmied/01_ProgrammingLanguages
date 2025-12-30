@@ -243,4 +243,39 @@ func repeat() {
 	lgth := len(nums9)
 	nums9 = nums9[:lgth-1]
 	fmt.Println("The slice nums9:", nums9)
+
+	fmt.Println("====================================")
+	fmt.Println("==============Task 12==============")
+	fmt.Println("====================================")
+
+	/*
+	   Task
+	   Implement a program that works with a sequence of elements and creates a subset view of that sequence.
+
+	   After creating the subset, extend the original sequence beyond its initial storage capacity.
+
+	   Demonstrate how exceeding the capacity leads to allocation of a new underlying storage, and show that the previously created subset continues to reference the original storage rather than the new one
+	*/
+
+	a := make([]int, 0, 100)
+
+	for i := 0; i < 100; i++ {
+		a = append(a, i)
+	}
+	fmt.Println("Task 12. 1. Slice a: ", a)
+
+	b := a[:10]
+	fmt.Println("Task 12. 1. Slice b: ", b)
+
+	a = append(a, 100, 101)
+	a[0] = 999
+
+	fmt.Println()
+	fmt.Println("Task 12. 2. Slice a: ", a[:10])
+	fmt.Println("Task 12. 2. Slice b: ", b)
+
+	fmt.Println()
+	fmt.Printf("Address of a[0]: %p\n", &a[0])
+	fmt.Printf("Address of b[0]: %p\n", &b[0])
+
 }
