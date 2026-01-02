@@ -1,10 +1,13 @@
-# 02_Programming-Languages
+# 02_programming-languages
 
 This repository contains programming exercises and practical tasks completed
 during my professional retraining (Umschulung) in Germany, as well as additional
 assignments created as part of my ongoing self-education.
 
-The focus of this repository is on building a solid foundation in software
+While this repository covers multiple programming languages, my current primary
+focus for development and professional work is Go (Golang).
+
+The goal of this repository is to build a solid foundation in software
 development across multiple programming languages and paradigms.
 
 ---
@@ -16,11 +19,22 @@ and contains small, focused exercises.
 
 Current areas include:
 - Go
-- C / C#
 - Java
+- C / C#
 - SQL
 - HTML & CSS
 - PHP
+
+---
+
+## Java
+
+Java was the primary programming language during my professional retraining
+(Umschulung) in Germany.
+
+The Java section reflects the core curriculum of the retraining program and
+covers a wide range of topics, including language fundamentals, object-oriented
+design, design patterns, database access (JDBC/MySQL), testing, and I/O.
 
 ---
 
