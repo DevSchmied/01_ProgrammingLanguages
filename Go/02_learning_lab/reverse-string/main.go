@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	SlidCode Problem 344 — Reverse String
 
@@ -38,4 +40,15 @@ func reverseString(s []byte) {
 		s[i] = s[length-i-1]
 		s[length-i-1] = tmp
 	}
+}
+
+func main() {
+	s1 := []byte{'h', 'e', 'l', 'l', 'o'}
+	s2 := []byte{'H', 'a', 'n', 'n', 'a', 'h'}
+
+	reverseString(s1)
+	reverseString(s2)
+
+	fmt.Println(string(s1))
+	fmt.Println(string(s2))
 }
