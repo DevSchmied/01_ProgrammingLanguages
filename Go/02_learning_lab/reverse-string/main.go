@@ -29,3 +29,13 @@ package main
 	Note:
 	This is a SlidCode practice problem.
 */
+
+func reverseString(s []byte) {
+	length := len(s)
+
+	for i := 0; i < length/2; i++ {
+		tmp := s[i]
+		s[i] = s[length-i-1]
+		s[length-i-1] = tmp
+	}
+}
