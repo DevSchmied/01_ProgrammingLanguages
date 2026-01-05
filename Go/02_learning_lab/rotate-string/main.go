@@ -22,3 +22,40 @@ Constraints:
 1 <= s.length, goal.length <= 100
 s and goal consist of lowercase English letters.
 */
+
+import (
+	"fmt"
+)
+
+func rotateStringBruteForce(s string, goal string) bool {
+	if len(s) != len(goal) {
+		return false
+	}
+
+	sRunes := []rune(s)
+	tmp := make([]rune, len(sRunes))
+
+	for i := 0; i < len(sRunes); i++ {
+		copy(tmp, sRunes)
+
+		for j := 0; j < len(sRunes); j++ {
+			if j == len(sRunes)-1 {
+				sRunes[0] = tmp[len(sRunes)-1]
+				break
+			}
+			sRunes[j+1] = tmp[j]
+		}
+
+		if string(sRunes) == goal {
+			return true
+		}
+	}
+
+	return false
+}
+
+func main() {
+	fmt.Println("Brute-force solution:")
+	fmt.Println("Expected: true,  Got:", rotateStringBruteForce("abcde", "cdeab"))
+	fmt.Println("Expected: false, Got:", rotateStringBruteForce("abcde", "abced"))
+}
