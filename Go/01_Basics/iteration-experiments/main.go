@@ -20,7 +20,29 @@ Explain or demonstrate how modifying a collection while iterating over it can af
 control flow, termination conditions, and data consistency.
 */
 
+import "fmt"
+
 func main() {
 	x := []string{"A", "B", "C"}
-	_ = x
+
+	for idx, v := range x {
+		fmt.Printf("%d: %s\n", idx, v)
+		x[idx+1] = "M"
+		x = append(x, "Z")
+		x[idx+1] = "Z"
+	}
+	fmt.Println("array x:", x)
+
+	x = []string{"A", "B", "C"}
+	for i := 0; i < len(x); i++ {
+		if len(x) >= 10 {
+			fmt.Println("Otherwise infinite loop")
+			break
+		}
+		x[i+1] = "M"
+		fmt.Printf("%d: %s\n", i, x[i])
+		x = append(x, "Z")
+		x[i+1] = "Z"
+
+	}
 }
