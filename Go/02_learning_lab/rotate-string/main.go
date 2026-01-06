@@ -25,6 +25,7 @@ s and goal consist of lowercase English letters.
 
 import (
 	"fmt"
+	"strings"
 )
 
 func rotateStringBruteForce(s string, goal string) bool {
@@ -54,8 +55,21 @@ func rotateStringBruteForce(s string, goal string) bool {
 	return false
 }
 
+func rotateStringOptimized(s string, goal string) bool {
+	if len(s) != len(goal) {
+		return false
+	}
+	return strings.Contains(s+s, goal)
+}
+
 func main() {
 	fmt.Println("Brute-force solution:")
 	fmt.Println("Expected: true,  Got:", rotateStringBruteForce("abcde", "cdeab"))
 	fmt.Println("Expected: false, Got:", rotateStringBruteForce("abcde", "abced"))
+
+	fmt.Println()
+
+	fmt.Println("Optimized solution:")
+	fmt.Println("Expected: true,  Got:", rotateStringOptimized("abcde", "cdeab"))
+	fmt.Println("Expected: false, Got:", rotateStringOptimized("abcde", "abced"))
 }
