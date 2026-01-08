@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode #541 — Reverse String II (Easy)
 
@@ -25,6 +27,32 @@ Constraints:
 - 1 <= k <= 10^4
 */
 
-func main() {
+func reverseStr(s string, k int) string {
+	r := []rune(s)
+	n := len(r)
 
+	for start := 0; start < n; start += 2 * k {
+		left := start
+		right := start + k - 1
+
+		if right >= n {
+			right = n - 1
+		}
+
+		for left < right {
+			r[left], r[right] = r[right], r[left]
+			left++
+			right--
+		}
+	}
+
+	return string(r)
+}
+
+func main() {
+	fmt.Println("1. case")
+	fmt.Println(reverseStr("abcdefg", 2))
+
+	fmt.Println("2. case")
+	fmt.Println(reverseStr("abcd", 2))
 }
