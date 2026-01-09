@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 844 — Backspace String Compare
 
@@ -45,5 +47,30 @@ LeetCode (https://leetcode.com/problems/backspace-string-compare/)
 
 func backspaceCompare(s string, t string) bool {
 
-	return true
+	if len(s) == 0 && len(t) == 0 {
+		return true
+	}
+
+	return backspaceDelete(s) == backspaceDelete(t)
+}
+
+func backspaceDelete(s string) string {
+	r := make([]rune, len(s))
+	counter := 0
+
+	for _, ch := range s {
+		if ch != '#' {
+			r[counter] = ch
+			counter++
+		} else if counter > 0 {
+			counter--
+		}
+	}
+	return string(r[:counter])
+}
+
+func main() {
+	fmt.Println(backspaceCompare("ab#c", "ad#c"))
+	fmt.Println(backspaceCompare("ab##", "c#d#"))
+	fmt.Println(backspaceCompare("a#c", "b"))
 }
