@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode — Roman to Integer
 
@@ -39,3 +41,65 @@ Constraints:
 - s contains only characters: I, V, X, L, C, D, M
 - s is guaranteed to be a valid Roman numeral in the range [1, 3999]
 */
+
+func romanToInt(s string) int {
+	symbolValueMap := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+
+	sum := 0
+
+	for idx := 0; idx < len(s); idx++ {
+		if s[idx] == 'I' {
+			if idx < len(s)-1 {
+				if s[idx+1] == 'V' || s[idx+1] == 'X' {
+					sum = sum + (symbolValueMap[s[idx+1]] - symbolValueMap[s[idx]])
+					idx++
+					continue
+				}
+			}
+		}
+		if s[idx] == 'X' {
+			if idx < len(s)-1 {
+				if s[idx+1] == 'L' || s[idx+1] == 'C' {
+					sum = sum + (symbolValueMap[s[idx+1]] - symbolValueMap[s[idx]])
+					idx++
+					continue
+				}
+			}
+		}
+		if s[idx] == 'C' {
+			if idx < len(s)-1 {
+				if s[idx+1] == 'D' || s[idx+1] == 'M' {
+					sum = sum + (symbolValueMap[s[idx+1]] - symbolValueMap[s[idx]])
+					idx++
+					continue
+				}
+			}
+		}
+		sum = sum + symbolValueMap[s[idx]]
+	}
+
+	return sum
+}
+
+func main() {
+
+	fmt.Println("===================1. Example===================")
+	fmt.Println(romanToInt("III"))
+	fmt.Println()
+
+	fmt.Println("===================2. Example===================")
+	fmt.Println(romanToInt("LVIII"))
+	fmt.Println()
+
+	fmt.Println("===================3. Example===================")
+	fmt.Println(romanToInt("MCMXCIV"))
+
+}
