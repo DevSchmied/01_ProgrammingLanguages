@@ -89,17 +89,51 @@ func romanToInt(s string) int {
 	return sum
 }
 
-func main() {
+func romanToIntOptimized(s string) int {
+	values := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
 
-	fmt.Println("===================1. Example===================")
+	sum := 0
+	for i := 0; i < len(s); i++ {
+		if i+1 < len(s) && values[s[i]] < values[s[i+1]] {
+			sum -= values[s[i]]
+		} else {
+			sum += values[s[i]]
+		}
+	}
+
+	return sum
+}
+
+func main() {
+	fmt.Println("===================1. Case, 1. Example===================")
 	fmt.Println(romanToInt("III"))
 	fmt.Println()
 
-	fmt.Println("===================2. Example===================")
+	fmt.Println("===================1. Case, 2. Example===================")
 	fmt.Println(romanToInt("LVIII"))
 	fmt.Println()
 
-	fmt.Println("===================3. Example===================")
+	fmt.Println("===================1. Case, 3. Example===================")
 	fmt.Println(romanToInt("MCMXCIV"))
+	fmt.Println()
+	fmt.Println()
 
+	fmt.Println("===================2. Case, 1. Example===================")
+	fmt.Println(romanToIntOptimized("III"))
+	fmt.Println()
+
+	fmt.Println("===================2. Case, 2. Example===================")
+	fmt.Println(romanToIntOptimized("LVIII"))
+	fmt.Println()
+
+	fmt.Println("===================2. Case, 3. Example===================")
+	fmt.Println(romanToIntOptimized("MCMXCIV"))
 }
