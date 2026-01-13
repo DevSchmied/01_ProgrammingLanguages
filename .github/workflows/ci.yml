@@ -1,0 +1,34 @@
+name: Go CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "Go/**"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "Go/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - name: Run Go tests (all modules)
+        run: |
+          set -e
+          find Go -name go.mod -execdir go test ./... \;
+
+      - name: Run go vet (all modules)
+        run: |
+          set -e
+          find Go -name go.mod -execdir go vet ./... \;
