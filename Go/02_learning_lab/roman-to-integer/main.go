@@ -136,4 +136,6 @@ func main() {
 
 	fmt.Println("===================2. Case, 3. Example===================")
 	fmt.Println(romanToIntOptimized("MCMXCIV"))
+
+	fmt.Println("CI test")
 }
