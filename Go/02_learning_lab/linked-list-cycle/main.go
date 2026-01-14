@@ -63,8 +63,27 @@ func hasCycle(head *ListNode) bool {
 	return false
 }
 
+func hasCycleOptimized(head *ListNode) bool {
+	if head == nil || head.Next == nil {
+		return false
+	}
+
+	slow, fast := head, head
+
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+
+		if slow == fast {
+			return true
+		}
+	}
+
+	return false
+}
+
 func main() {
-	fmt.Println("=================1. Example=================")
+	fmt.Println("=================1. Case, 1. Example=================")
 
 	var ln1, ln2, ln3, ln4 ListNode
 
@@ -90,7 +109,7 @@ func main() {
 
 	fmt.Println(hasCycle(&ln1))
 
-	fmt.Println("=================2. Example=================")
+	fmt.Println("=================1. Case, 2. Example=================")
 
 	var ln21, ln22 ListNode
 
@@ -102,7 +121,7 @@ func main() {
 
 	fmt.Println(hasCycle(&ln21))
 
-	fmt.Println("=================3. Example=================")
+	fmt.Println("=================1. Case, 3. Example=================")
 
 	ln31 := ListNode{
 		Val:  1,
@@ -111,4 +130,16 @@ func main() {
 
 	fmt.Println(hasCycle(&ln31))
 
+	fmt.Println()
+	fmt.Println("=================2. Case, 1. Example=================")
+
+	fmt.Println(hasCycleOptimized(&ln1))
+
+	fmt.Println("=================2. Case, 2. Example=================")
+
+	fmt.Println(hasCycleOptimized(&ln21))
+
+	fmt.Println("=================2. Case, 3. Example=================")
+
+	fmt.Println(hasCycleOptimized(&ln31))
 }
