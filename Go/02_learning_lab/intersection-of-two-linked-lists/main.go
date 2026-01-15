@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 160 — Intersection of Two Linked Lists
 
@@ -67,3 +69,139 @@ Constraints:
 - 0 <= skipB <= n
 - intersectVal == 0 if and only if the lists do not intersect
 */
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	if headA == nil || headB == nil {
+		return nil
+	}
+
+	curA := headA
+	mapA := make(map[*ListNode]struct{})
+
+	for curA != nil {
+		mapA[curA] = struct{}{}
+		curA = curA.Next
+	}
+
+	curB := headB
+
+	for curB != nil {
+		if _, ok := mapA[curB]; ok {
+			return curB
+		}
+		curB = curB.Next
+	}
+
+	return nil
+}
+
+func main() {
+
+	fmt.Println("=========================\nExample 1\nIntersection at value 8\n=========================")
+
+	var lnb1, lnb2, lnb3, lna2, lna3, lnab4, lnab5, lnab6 ListNode
+
+	// List B: 5 -> 6 -> 1 -> 8 -> 4 -> 5
+	lnb1.Val = 5
+	lnb1.Next = &lnb2
+
+	lnb2.Val = 6
+	lnb2.Next = &lnb3
+
+	lnb3.Val = 1
+	lnb3.Next = &lnab4
+
+	// List A: 4 -> 1 -> 8 -> 4 -> 5
+	lna2.Val = 4
+	lna2.Next = &lna3
+
+	lna3.Val = 1
+	lna3.Next = &lnab4
+
+	// Shared part
+	lnab4.Val = 8
+	lnab4.Next = &lnab5
+
+	lnab5.Val = 4
+	lnab5.Next = &lnab6
+
+	lnab6.Val = 5
+	lnab6.Next = nil
+
+	res1 := getIntersectionNode(&lna2, &lnb1)
+	if res1 != nil {
+		fmt.Println("Intersection found at node with value:", res1.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+
+	fmt.Println()
+
+	fmt.Println("=========================\nExample 2\nIntersection at value 2\n=========================")
+
+	// Shared part
+	var shared1, shared2 ListNode
+	shared1.Val = 2
+	shared1.Next = &shared2
+
+	shared2.Val = 4
+	shared2.Next = nil
+
+	// List A: 1 -> 9 -> 1 -> 2 -> 4
+	var a1, a2, a3 ListNode
+	a1.Val = 1
+	a1.Next = &a2
+
+	a2.Val = 9
+	a2.Next = &a3
+
+	a3.Val = 1
+	a3.Next = &shared1
+
+	// List B: 3 -> 2 -> 4
+	var b1 ListNode
+	b1.Val = 3
+	b1.Next = &shared1
+
+	res2 := getIntersectionNode(&a1, &b1)
+	if res2 != nil {
+		fmt.Println("Intersection found at node with value:", res2.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+
+	fmt.Println()
+
+	fmt.Println("=========================\nExample 3\nNo intersection\n=========================")
+
+	// List A: 2 -> 6 -> 4
+	var a4, a5, a6 ListNode
+	a4.Val = 2
+	a4.Next = &a5
+
+	a5.Val = 6
+	a5.Next = &a6
+
+	a6.Val = 4
+	a6.Next = nil
+
+	// List B: 1 -> 5
+	var b2, b3 ListNode
+	b2.Val = 1
+	b2.Next = &b3
+
+	b3.Val = 5
+	b3.Next = nil
+
+	res3 := getIntersectionNode(&a4, &b2)
+	if res3 != nil {
+		fmt.Println("Intersection found at node with value:", res3.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+}
