@@ -100,6 +100,30 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	return nil
 }
 
+func getIntersectionNodeOptimized(headA, headB *ListNode) *ListNode {
+	if headA == nil || headB == nil {
+		return nil
+	}
+
+	a, b := headA, headB
+
+	for a != b {
+		if a == nil {
+			a = headB
+		} else {
+			a = a.Next
+		}
+
+		if b == nil {
+			b = headA
+		} else {
+			b = b.Next
+		}
+	}
+
+	return a
+}
+
 func main() {
 
 	fmt.Println("=========================\nExample 1\nIntersection at value 8\n=========================")
@@ -201,6 +225,37 @@ func main() {
 	res3 := getIntersectionNode(&a4, &b2)
 	if res3 != nil {
 		fmt.Println("Intersection found at node with value:", res3.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+
+	fmt.Println("=========================\nExample 1 (optimized)\nIntersection at value 8\n=========================")
+
+	res1opt := getIntersectionNodeOptimized(&lna2, &lnb1)
+	if res1opt != nil {
+		fmt.Println("Intersection found at node with value:", res1opt.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+
+	fmt.Println()
+
+	fmt.Println("=========================\nExample 2 (optimized)\nIntersection at value 2\n=========================")
+
+	res2opt := getIntersectionNodeOptimized(&a1, &b1)
+	if res2opt != nil {
+		fmt.Println("Intersection found at node with value:", res2opt.Val)
+	} else {
+		fmt.Println("No intersection found")
+	}
+
+	fmt.Println()
+
+	fmt.Println("=========================\nExample 3 (optimized)\nNo intersection\n=========================")
+
+	res3opt := getIntersectionNodeOptimized(&a4, &b2)
+	if res3opt != nil {
+		fmt.Println("Intersection found at node with value:", res3opt.Val)
 	} else {
 		fmt.Println("No intersection found")
 	}
