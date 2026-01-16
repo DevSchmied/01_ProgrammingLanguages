@@ -32,25 +32,21 @@ This is a problem from the LeetCode platform.
 */
 
 func majorityElement(nums []int) int {
+	count := 0
+	candidate := 0
 
-	valuesMap := make(map[int]int)
-
-	for _, v := range nums {
-		valuesMap[v]++
-	}
-
-	counter := 0
-	result := nums[0]
-	for k, v := range valuesMap {
-		if counter < v {
-			counter = v
-			result = k
+	for _, num := range nums {
+		if count == 0 {
+			candidate = num
+		}
+		if num == candidate {
+			count++
+		} else {
+			count--
 		}
 	}
-	if counter > len(nums)/2 {
-		return result
-	}
-	return 0
+
+	return candidate
 }
 
 func main() {
