@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 /*
 LeetCode 202 — Happy Number
 
@@ -36,3 +40,37 @@ Constraints:
 Source:
 This is a problem from the LeetCode platform.
 */
+
+func isHappy(n int) bool {
+	seen := make(map[int]struct{})
+	for n != 1 {
+		if _, exists := seen[n]; exists {
+			return false
+		}
+		seen[n] = struct{}{}
+
+		res := 0
+
+		for n > 0 {
+			digit := n % 10
+			res = res + (digit * digit)
+			n /= 10
+		}
+		n = res
+	}
+	return true
+}
+
+func main() {
+	fmt.Println("======================================")
+	fmt.Println("Solution:")
+	fmt.Println("======================================")
+
+	fmt.Printf("Example 1 | Expected: %t | Got: %t\n", true,
+		isHappy(19))
+	fmt.Println()
+
+	fmt.Printf("Example 2 | Expected: %t | Got: %t\n", false,
+		isHappy(2))
+	fmt.Println()
+}
