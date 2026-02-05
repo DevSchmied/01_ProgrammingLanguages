@@ -78,6 +78,7 @@ func isIsomorphic(s string, t string) bool {
 
 		mapST[c1] = c2
 		mapTS[c2] = c1
+		// test
 	}
 
 	return true
