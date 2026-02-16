@@ -18,11 +18,42 @@ Constraints:
 s and t consist of lowercase English letters.
 */
 
-func isAnagram(s string, t string) bool {
+import "fmt"
 
-	return false
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	length := len(s)
+	if len(t) > length {
+		length = len(t)
+	}
+
+	mapS := make(map[rune]int, length)
+	mapT := make(map[rune]int, length)
+
+	for _, v := range s {
+		mapS[v] = mapS[v] + 1
+	}
+
+	for _, v := range t {
+		mapT[v] = mapT[v] + 1
+	}
+
+	for k, valS := range mapS {
+		valT, exists := mapT[k]
+		if !exists || valT != valS {
+			return false
+		}
+	}
+	return true
 }
 
 func main() {
+	// Test 1
+	fmt.Println("Test 1:", isAnagram("anagram", "nagaram"), "expected: true")
 
+	// Test 2
+	fmt.Println("Test 2:", isAnagram("rat", "car"), "expected: false")
 }
