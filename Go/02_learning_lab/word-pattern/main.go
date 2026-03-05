@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 /*
 Source: LeetCode
 
@@ -42,3 +44,32 @@ Constraints:
 - s has no leading or trailing spaces
 - words in s are separated by a single space
 */
+
+func wordPattern(pattern string, s string) bool {
+	letterMap := make(map[rune]string)
+	wordMap := make(map[string]rune)
+	letters := []rune(pattern)
+	words := strings.Split(s, " ")
+
+	if len(pattern) != len(words) {
+		return false
+	}
+
+	for i := 0; i < len(words); i++ {
+		if val, exists := letterMap[letters[i]]; exists {
+			if val != words[i] {
+				return false
+			}
+		}
+		letterMap[letters[i]] = words[i]
+
+		if val, exists := wordMap[words[i]]; exists {
+			if val != letters[i] {
+				return false
+			}
+		}
+		wordMap[words[i]] = letters[i]
+	}
+
+	return true
+}
