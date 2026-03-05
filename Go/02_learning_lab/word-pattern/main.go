@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 /*
 Source: LeetCode
@@ -72,4 +75,10 @@ func wordPattern(pattern string, s string) bool {
 	}
 
 	return true
+}
+
+func main() {
+	fmt.Println("Test 1:", wordPattern("abba", "dog cat cat dog"), "expected:", true)
+	fmt.Println("Test 2:", wordPattern("abba", "dog cat cat fish"), "expected:", false)
+	fmt.Println("Test 3:", wordPattern("aaaa", "dog cat cat dog"), "expected:", false)
 }
