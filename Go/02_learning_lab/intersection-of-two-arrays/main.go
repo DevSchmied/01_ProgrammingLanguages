@@ -21,3 +21,46 @@ Constraints:
 
 Source: LeetCode
 */
+
+func intersection(nums1 []int, nums2 []int) []int {
+
+	var mapArr map[int]struct{}
+	var sliceInt []int
+
+	if len(nums1) > len(nums2) {
+		mapArr = make(map[int]struct{}, len(nums1))
+		sliceInt = make([]int, 0, len(nums1))
+
+		for _, val := range nums1 {
+			if _, exists := mapArr[val]; !exists {
+				mapArr[val] = struct{}{}
+			}
+		}
+
+		for _, val := range nums2 {
+			if _, exists := mapArr[val]; exists {
+				sliceInt = append(sliceInt, val)
+				delete(mapArr, val)
+			}
+		}
+
+	} else {
+		mapArr = make(map[int]struct{}, len(nums2))
+		sliceInt = make([]int, 0, len(nums1))
+
+		for _, val := range nums2 {
+			if _, exists := mapArr[val]; !exists {
+				mapArr[val] = struct{}{}
+			}
+		}
+
+		for _, val := range nums1 {
+			if _, exists := mapArr[val]; exists {
+				sliceInt = append(sliceInt, val)
+				delete(mapArr, val)
+			}
+		}
+	}
+
+	return sliceInt
+}
