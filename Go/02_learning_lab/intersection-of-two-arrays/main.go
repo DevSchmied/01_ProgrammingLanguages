@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LEETCODE 349: Intersection of Two Arrays
 
@@ -63,4 +65,19 @@ func intersection(nums1 []int, nums2 []int) []int {
 	}
 
 	return sliceInt
+}
+
+func main() {
+
+	// Testfall 1: Beispiel aus der Aufgabe
+	nums1 := []int{1, 2, 2, 1}
+	nums2 := []int{2, 2}
+	fmt.Printf("nums1 = %v, nums2 = %v\n", nums1, nums2)
+	fmt.Printf("Intersection: %v\n\n", intersection(nums1, nums2))
+
+	// Testfall 2: Beispiel aus der Aufgabe
+	nums3 := []int{4, 9, 5}
+	nums4 := []int{9, 4, 9, 8, 4}
+	fmt.Printf("nums1 = %v, nums2 = %v\n", nums3, nums4)
+	fmt.Printf("Intersection: %v\n\n", intersection(nums3, nums4))
 }
