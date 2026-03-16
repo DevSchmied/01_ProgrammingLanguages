@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 
 LeetCode 350: Intersection of Two Arrays II
@@ -43,4 +45,20 @@ func intersect(nums1 []int, nums2 []int) []int {
 	}
 
 	return res
+}
+
+func main() {
+	// Test Case 1: [1,2,2,1] and [2,2] -> should return [2,2]
+	nums1a := []int{1, 2, 2, 1}
+	nums2a := []int{2, 2}
+	result1 := intersect(nums1a, nums2a)
+	fmt.Printf("Test 1 - nums1: %v, nums2: %v\n", nums1a, nums2a)
+	fmt.Printf("Result: %v\n\n", result1)
+
+	// Test Case 2: [4,9,5] and [9,4,9,8,4] -> should return [4,9] or [9,4]
+	nums1b := []int{4, 9, 5}
+	nums2b := []int{9, 4, 9, 8, 4}
+	result2 := intersect(nums1b, nums2b)
+	fmt.Printf("Test 2 - nums1: %v, nums2: %v\n", nums1b, nums2b)
+	fmt.Printf("Result: %v\n", result2)
 }
