@@ -22,3 +22,25 @@ Constraints:
 - 0 <= nums1[i], nums2[i] <= 1000
 
 */
+
+func intersect(nums1 []int, nums2 []int) []int {
+	if len(nums1) > len(nums2) {
+		nums1, nums2 = nums2, nums1
+	}
+
+	counts := make(map[int]int)
+	res := make([]int, 0, len(nums1))
+
+	for _, v := range nums1 {
+		counts[v]++
+	}
+
+	for _, v := range nums2 {
+		if counts[v] > 0 {
+			res = append(res, v)
+			counts[v]--
+		}
+	}
+
+	return res
+}
