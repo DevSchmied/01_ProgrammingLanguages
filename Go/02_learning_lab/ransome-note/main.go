@@ -47,3 +47,26 @@ func canConstruct(ransomNote string, magazine string) bool {
 	}
 	return true
 }
+
+func main() {
+	// Test case 1: ransomNote = "a", magazine = "b" -> should return false
+	ransomNote1 := "a"
+	magazine1 := "b"
+	result1 := canConstruct(ransomNote1, magazine1)
+	fmt.Printf("Test 1 - ransomNote: %s, magazine: %s -> Result: %v (Expected: false)\n",
+		ransomNote1, magazine1, result1)
+
+	// Test case 2: ransomNote = "aa", magazine = "ab" -> should return false
+	ransomNote2 := "aa"
+	magazine2 := "ab"
+	result2 := canConstruct(ransomNote2, magazine2)
+	fmt.Printf("Test 2 - ransomNote: %s, magazine: %s -> Result: %v (Expected: false)\n",
+		ransomNote2, magazine2, result2)
+
+	// Test case 3: ransomNote = "aa", magazine = "aab" -> should return true
+	ransomNote3 := "aa"
+	magazine3 := "aab"
+	result3 := canConstruct(ransomNote3, magazine3)
+	fmt.Printf("Test 3 - ransomNote: %s, magazine: %s -> Result: %v (Expected: true)\n",
+		ransomNote3, magazine3, result3)
+}
