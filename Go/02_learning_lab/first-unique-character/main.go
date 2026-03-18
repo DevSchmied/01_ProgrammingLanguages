@@ -28,5 +28,16 @@ Note: This problem is from LeetCode and requires finding the first character tha
 
 func firstUniqChar(s string) int {
 
+	mapString := make(map[rune]int)
+	for _, ch := range s {
+		mapString[ch]++
+	}
+
+	for idx, ch := range s {
+		if mapString[ch] == 1 {
+			return idx
+		}
+	}
+
 	return -1
 }
