@@ -27,5 +27,21 @@ Note: This problem is from LeetCode and requires finding the maximum possible pa
 
 func longestPalindrome(s string) int {
 
-	return 1
+	mapString := make(map[rune]int)
+	length := 0
+	hasOdd := false
+	for _, ch := range s {
+		mapString[ch]++
+	}
+
+	for _, value := range mapString {
+		length += (value / 2) * 2
+		if value%2 == 1 {
+			hasOdd = true
+		}
+	}
+	if hasOdd {
+		length++
+	}
+	return length
 }
