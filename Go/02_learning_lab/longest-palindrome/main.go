@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 409: Longest Palindrome
 
@@ -44,4 +46,16 @@ func longestPalindrome(s string) int {
 		length++
 	}
 	return length
+}
+
+func main() {
+	// Test case 1: s = "abccccdd" -> longest palindrome length should be 7
+	s1 := "abccccdd"
+	result1 := longestPalindrome(s1)
+	fmt.Printf("Test 1 - s: %s -> Result: %d (Expected: 7)\n", s1, result1)
+
+	// Test case 2: s = "a" -> single character -> should return 1
+	s2 := "a"
+	result2 := longestPalindrome(s2)
+	fmt.Printf("Test 2 - s: %s -> Result: %d (Expected: 1)\n", s2, result2)
 }
