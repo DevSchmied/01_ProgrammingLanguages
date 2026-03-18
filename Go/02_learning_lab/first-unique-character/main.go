@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 
 LeetCode 387: First Unique Character in a String
@@ -40,4 +42,21 @@ func firstUniqChar(s string) int {
 	}
 
 	return -1
+}
+
+func main() {
+	// Test case 1: s = "leetcode" -> first unique character 'l' at index 0
+	s1 := "leetcode"
+	result1 := firstUniqChar(s1)
+	fmt.Printf("Test 1 - s: %s -> Result: %d (Expected: 0)\n", s1, result1)
+
+	// Test case 2: s = "loveleetcode" -> first unique character 'v' at index 2
+	s2 := "loveleetcode"
+	result2 := firstUniqChar(s2)
+	fmt.Printf("Test 2 - s: %s -> Result: %d (Expected: 2)\n", s2, result2)
+
+	// Test case 3: s = "aabb" -> no unique character -> should return -1
+	s3 := "aabb"
+	result3 := firstUniqChar(s3)
+	fmt.Printf("Test 3 - s: %s -> Result: %d (Expected: -1)\n", s3, result3)
 }
