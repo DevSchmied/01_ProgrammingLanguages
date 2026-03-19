@@ -22,3 +22,21 @@ n == nums.length
 1 <= n <= 10^5
 1 <= nums[i] <= n
 */
+
+func findDisappearedNumbers(nums []int) []int {
+
+	res := []int{}
+	mapNums := make(map[int]struct{})
+
+	for _, v := range nums {
+		mapNums[v] = struct{}{}
+	}
+
+	for i := 1; i <= len(nums); i++ {
+		if _, exists := mapNums[i]; !exists {
+			res = append(res, i)
+		}
+	}
+
+	return res
+}
