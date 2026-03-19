@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 448: Find All Numbers Disappeared in an Array
 Quelle: LeetCode (https://leetcode.com)
@@ -39,4 +41,16 @@ func findDisappearedNumbers(nums []int) []int {
 	}
 
 	return res
+}
+
+func main() {
+	// Test case 1: Standard case with multiple missing numbers
+	nums1 := []int{4, 3, 2, 7, 8, 2, 3, 1}
+	result1 := findDisappearedNumbers(nums1)
+	fmt.Printf("Test 1 - nums: %v -> Result: %v (Expected: [5 6])\n", nums1, result1)
+
+	// Test case 2: Case with duplicate numbers
+	nums2 := []int{1, 1}
+	result2 := findDisappearedNumbers(nums2)
+	fmt.Printf("Test 2 - nums: %v -> Result: %v (Expected: [2])\n", nums2, result2)
 }
