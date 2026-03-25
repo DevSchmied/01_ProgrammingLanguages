@@ -28,3 +28,27 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 
 */
+
+func lengthOfLongestSubstring(s string) int {
+	seen := make(map[byte]int)
+	left, maxLen := 0, 0
+
+	for right := 0; right < len(s); right++ {
+		if idx, exists := seen[s[right]]; exists {
+			seen[s[right]] = idx
+			if idx >= left {
+				left = idx + 1
+			}
+		}
+		seen[s[right]] = right
+		if right-left+1 > maxLen {
+			maxLen = right - left + 1
+		}
+	}
+
+	return maxLen
+}
+
+func main() {
+
+}
