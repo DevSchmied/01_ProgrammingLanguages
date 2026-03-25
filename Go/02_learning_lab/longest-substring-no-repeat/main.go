@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 3: Longest Substring Without Repeating Characters
 Quelle: LeetCode (https://leetcode.com)
@@ -50,5 +52,18 @@ func lengthOfLongestSubstring(s string) int {
 }
 
 func main() {
+	// Test case 1: s = "abcabcbb" -> longest substring without repeating characters should be 3
+	s1 := "abcabcbb"
+	result1 := lengthOfLongestSubstring(s1)
+	fmt.Printf("Test 1 - s: \"%s\" -> Result: %d (Expected: 3)\n", s1, result1)
 
+	// Test case 2: s = "bbbbb" -> all same characters -> should return 1
+	s2 := "bbbbb"
+	result2 := lengthOfLongestSubstring(s2)
+	fmt.Printf("Test 2 - s: \"%s\" -> Result: %d (Expected: 1)\n", s2, result2)
+
+	// Test case 3: s = "pwwkew" -> longest substring "wke" or "kew" -> should return 3
+	s3 := "pwwkew"
+	result3 := lengthOfLongestSubstring(s3)
+	fmt.Printf("Test 3 - s: \"%s\" -> Result: %d (Expected: 3)\n", s3, result3)
 }
