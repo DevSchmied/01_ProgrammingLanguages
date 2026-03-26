@@ -29,16 +29,37 @@ Input: digits = "2"
 Output: ["a","b","c"]
 Explanation: Only one digit, so return all letters that digit maps to.
 
-Input: digits = ""
-Output: []
-Explanation: Empty string returns an empty list.
-
 Constraints:
 1 <= digits.length <= 4
 digits[i] is a digit in the range ['2', '9']
 */
 
 func letterCombinations(digits string) []string {
+	res := []string{""}
 
-	return []string{}
+	letters := map[byte]string{
+		'2': "abc",
+		'3': "def",
+		'4': "ghi",
+		'5': "jkl",
+		'6': "mno",
+		'7': "pqrs",
+		'8': "tuv",
+		'9': "wxyz",
+	}
+
+	for i := 0; i < len(digits); i++ {
+		digit := digits[i]
+		temp := make([]string, 0)
+
+		for _, prefix := range res {
+			for j := 0; j < len(letters[digit]); j++ {
+				temp = append(temp, prefix+string(letters[digit][j]))
+			}
+		}
+
+		res = temp
+	}
+
+	return res
 }
