@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 17: Letter Combinations of a Phone Number
 Quelle: LeetCode (https://leetcode.com/problems/letter-combinations-of-a-phone-number)
@@ -62,4 +64,16 @@ func letterCombinations(digits string) []string {
 	}
 
 	return res
+}
+
+func main() {
+	// Test case 1: digits = "2" -> should return ["a","b","c"]
+	digits1 := "2"
+	result1 := letterCombinations(digits1)
+	fmt.Printf("Test 1 - digits: \"%s\" -> Result: %v (Expected: [a b c])\n", digits1, result1)
+
+	// Test case 2: digits = "23" -> should return ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+	digits2 := "23"
+	result2 := letterCombinations(digits2)
+	fmt.Printf("Test 2 - digits: \"%s\" -> Result: %v (Expected: [ad ae af bd be bf cd ce cf])\n", digits2, result2)
 }
