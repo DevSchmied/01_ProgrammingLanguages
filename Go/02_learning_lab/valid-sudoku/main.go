@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 36: Valid Sudoku
 Quelle: LeetCode (https://leetcode.com)
@@ -91,4 +93,36 @@ func isValidSudoku(board [][]byte) bool {
 	}
 
 	return true
+}
+
+func main() {
+	// Test case 1: Valid Sudoku board (from Example 1)
+	board1 := [][]byte{
+		{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+		{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+		{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+		{'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+		{'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+		{'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+		{'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+		{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+		{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
+	}
+	result1 := isValidSudoku(board1)
+	fmt.Printf("Test 1 - Valid Sudoku board -> Result: %t (Expected: true)\n", result1)
+
+	// Test case 2: Invalid Sudoku board with duplicate 8 in top-left 3x3 sub-box (from Example 2)
+	board2 := [][]byte{
+		{'8', '3', '.', '.', '7', '.', '.', '.', '.'},
+		{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+		{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+		{'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+		{'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+		{'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+		{'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+		{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+		{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
+	}
+	result2 := isValidSudoku(board2)
+	fmt.Printf("Test 2 - Invalid Sudoku board with duplicate 8 in sub-box -> Result: %t (Expected: false)\n", result2)
 }
