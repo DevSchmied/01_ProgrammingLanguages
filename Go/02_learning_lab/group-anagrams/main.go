@@ -31,3 +31,20 @@ Constraints:
 0 <= strs[i].length <= 100
 strs[i] consists of lowercase English letters.
 */
+
+func groupAnagrams(strs []string) [][]string {
+
+	return nil
+}
+
+func bubbleSort(str string) string {
+	result := []rune(str)
+	for i := 0; i < len(result)-1; i++ {
+		for j := 0; j < len(result)-i-1; j++ {
+			if result[j] > result[j+1] {
+				result[j], result[j+1] = result[j+1], result[j]
+			}
+		}
+	}
+	return string(result)
+}
