@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 73: Set Matrix Zeroes
 Quelle: LeetCode (https://leetcode.com)
@@ -27,5 +29,50 @@ n == matrix[0].length
 */
 
 func setZeroes(matrix [][]int) {
+	rowIdxSeen := make(map[int]struct{})
+	colIdxSeen := make(map[int]struct{})
+	for row := 0; row < len(matrix); row++ {
+		for col := 0; col < len(matrix[0]); col++ {
+			if matrix[row][col] == 0 {
+				rowIdxSeen[row] = struct{}{}
+				colIdxSeen[col] = struct{}{}
+			}
+		}
+	}
+
+	for row := 0; row < len(matrix); row++ {
+		if _, exists := rowIdxSeen[row]; exists {
+			for col := 0; col < len(matrix[0]); col++ {
+				matrix[row][col] = 0
+			}
+		}
+	}
+
+	for col := 0; col < len(matrix[0]); col++ {
+		if _, exists := colIdxSeen[col]; exists {
+			for row := 0; row < len(matrix); row++ {
+				matrix[row][col] = 0
+			}
+		}
+	}
+	fmt.Println(matrix)
+}
+
+func main() {
+	// Test case 1: 3x3 matrix with single zero at center
+	matrix1 := [][]int{
+		{1, 1, 1},
+		{1, 0, 1},
+		{1, 1, 1},
+	}
+	setZeroes(matrix1)
+
+	// Test case 2: 3x4 matrix with zeros at (0,0) and (0,3)
+	matrix2 := [][]int{
+		{0, 1, 2, 0},
+		{3, 4, 5, 2},
+		{1, 3, 1, 5},
+	}
+	setZeroes(matrix2)
 
 }
