@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 49: Group Anagrams
 Quelle: LeetCode (https://leetcode.com)
@@ -59,4 +61,21 @@ func bubbleSort(str string) string {
 		}
 	}
 	return string(result)
+}
+
+func main() {
+	// Test case 1: Standard case with multiple anagram groups
+	strs1 := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	result1 := groupAnagrams(strs1)
+	fmt.Printf("Test 1 - Multiple anagram groups -> Result: %v (Expected: [[bat] [nat tan] [ate eat tea]] or any order)\n", result1)
+
+	// Test case 2: Single empty string
+	strs2 := []string{""}
+	result2 := groupAnagrams(strs2)
+	fmt.Printf("Test 2 - Single empty string -> Result: %v (Expected: [[]])\n", result2)
+
+	// Test case 3: Single character string
+	strs3 := []string{"a"}
+	result3 := groupAnagrams(strs3)
+	fmt.Printf("Test 3 - Single character -> Result: %v (Expected: [[a]])\n", result3)
 }
