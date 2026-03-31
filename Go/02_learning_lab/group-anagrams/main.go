@@ -33,8 +33,20 @@ strs[i] consists of lowercase English letters.
 */
 
 func groupAnagrams(strs []string) [][]string {
-
-	return nil
+	res := make([][]string, len(strs))
+	resMap := make(map[string]int)
+	idx := 0
+	for _, str := range strs {
+		key := bubbleSort(str)
+		if i, exists := resMap[key]; exists {
+			res[i] = append(res[i], str)
+			continue
+		}
+		res[idx] = append(res[idx], str)
+		resMap[key] = idx
+		idx++
+	}
+	return res[:idx]
 }
 
 func bubbleSort(str string) string {
