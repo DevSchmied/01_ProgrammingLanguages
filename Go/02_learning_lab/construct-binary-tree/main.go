@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 LeetCode 105: Construct Binary Tree from Preorder and Inorder Traversal
 Quelle: LeetCode (https://leetcode.com/)
@@ -59,4 +61,25 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 	root.Right = buildTree(rightPreorder, rightInorder)
 
 	return root
+}
+
+func main() {
+	// Test case 1
+	preorder1 := []int{3, 9, 20, 15, 7}
+	inorder1 := []int{9, 3, 15, 20, 7}
+	tree1 := buildTree(preorder1, inorder1)
+
+	fmt.Println("Test 1:")
+	fmt.Printf("  Root value: %d (expected: 3)\n", tree1.Val)
+	fmt.Printf("  Left child: %d (expected: 9)\n", tree1.Left.Val)
+	fmt.Printf("  Right child: %d (expected: 20)\n", tree1.Right.Val)
+	fmt.Printf("  Right->Left: %d (expected: 15)\n", tree1.Right.Left.Val)
+	fmt.Printf("  Right->Right: %d (expected: 7)\n", tree1.Right.Right.Val)
+
+	// Test case 2
+	preorder2 := []int{-1}
+	inorder2 := []int{-1}
+	tree2 := buildTree(preorder2, inorder2)
+	fmt.Printf("\nTest 2:\n")
+	fmt.Printf("  Root value: %d (expected: -1)\n", tree2.Val)
 }
