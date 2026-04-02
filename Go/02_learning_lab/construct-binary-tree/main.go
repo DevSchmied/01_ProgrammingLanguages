@@ -35,5 +35,28 @@ type TreeNode struct {
 }
 
 func buildTree(preorder []int, inorder []int) *TreeNode {
-	return nil
+
+	if len(preorder) == 0 || len(inorder) == 0 {
+		return nil
+	}
+
+	root := &TreeNode{Val: preorder[0]}
+
+	rootIdx := 0
+	for idx, v := range inorder {
+		if v == preorder[0] {
+			rootIdx = idx
+		}
+	}
+
+	leftInorder := inorder[:rootIdx]
+	rightInorder := inorder[rootIdx+1:]
+
+	leftPreorder := preorder[1 : 1+len(leftInorder)]
+	rightPreorder := preorder[1+len(leftInorder):]
+
+	root.Left = buildTree(leftPreorder, leftInorder)
+	root.Right = buildTree(rightPreorder, rightInorder)
+
+	return root
 }
