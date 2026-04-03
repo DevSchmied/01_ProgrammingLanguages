@@ -70,6 +70,26 @@ func deleteNode(rootNode *Node, node *Node) *Node {
 	return rootNode
 }
 
+func searchNode(rootNode *Node, searchedNode *Node) *Node {
+	// Base case: Empty position found or value not in tree
+	if rootNode == nil {
+		return nil
+	}
+
+	// Case 1: Value FOUND. Return the current node
+	if searchedNode.Val == rootNode.Val {
+		return rootNode
+	}
+
+	// Case 2: Searched value is GREATER. Search in RIGHT subtree
+	if searchedNode.Val > rootNode.Val {
+		return searchNode(rootNode.Right, searchedNode)
+	}
+
+	// Case 3: Searched value is SMALLER. Search in LEFT subtree
+	return searchNode(rootNode.Left, searchedNode)
+}
+
 func main() {
 	var root *Node
 
