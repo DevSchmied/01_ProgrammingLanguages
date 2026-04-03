@@ -115,6 +115,18 @@ func main() {
 	fmt.Println("  Right-Right:", root.Right.Right.Val) // 8
 	fmt.Println()
 
+	// ========== SEARCH TESTS ==========
+	fmt.Println("=== SEARCH TESTS ===")
+
+	// Test 1: Search for existing value
+	result := searchNode(root, &Node{Val: 5})
+	fmt.Println("Search(5):", result.Val) // 5
+
+	// Test 2: Search for non-existent value
+	result = searchNode(root, &Node{Val: 10})
+	fmt.Println("Search(10):", result) // nil
+	fmt.Println()
+
 	// ========== DELETE TESTS ==========
 	fmt.Println("=== DELETE TESTS ===")
 
