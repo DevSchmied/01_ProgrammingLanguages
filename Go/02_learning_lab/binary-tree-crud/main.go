@@ -73,6 +73,10 @@ func deleteNode(rootNode *Node, node *Node) *Node {
 func main() {
 	var root *Node
 
+	// ========== INSERT TESTS ==========
+	fmt.Println("=== INSERT TESTS ===")
+
+	// Insert values to create a balanced BST
 	root = insertNode(root, &Node{Val: 5})
 	root = insertNode(root, &Node{Val: 3})
 	root = insertNode(root, &Node{Val: 7})
@@ -91,4 +95,51 @@ func main() {
 	fmt.Println("  Right-Right:", root.Right.Right.Val) // 8
 	fmt.Println()
 
+	// ========== DELETE TESTS ==========
+	fmt.Println("=== DELETE TESTS ===")
+
+	// Test 1: Delete leaf node (no children)
+	fmt.Println("Test 1: Delete leaf node (2)")
+	root = deleteNode(root, &Node{Val: 2})
+	fmt.Println("  Root:", root.Val)                  // 5
+	fmt.Println("  Left:", root.Left.Val)             // 3
+	fmt.Println("  Left-Left:", root.Left.Left)       // nil
+	fmt.Println("  Left-Right:", root.Left.Right.Val) // 4
+	fmt.Println()
+
+	// Test 2: Delete node with one child (right child)
+	fmt.Println("Test 2: Delete node with one child (7)")
+	root = deleteNode(root, &Node{Val: 7})
+	fmt.Println("  Root:", root.Val)                  // 5
+	fmt.Println("  Right:", root.Right.Val)           // 8
+	fmt.Println("  Right-Left:", root.Right.Left.Val) // 6
+	fmt.Println("  Right-Right:", root.Right.Right)   // nil
+	fmt.Println()
+
+	// Test 3: Delete node with two children (using successor)
+	fmt.Println("Test 3: Delete node with two children (5)")
+	root = deleteNode(root, &Node{Val: 5})
+	fmt.Println("  New Root (successor):", root.Val) // 6
+	fmt.Println("  Left:", root.Left.Val)            // 3
+	fmt.Println("  Right:", root.Right.Val)          // 8
+	fmt.Println("  Right-Left:", root.Right.Left)    // nil
+	fmt.Println()
+
+	// Test 4: Delete remaining nodes
+	fmt.Println("Test 4: Delete remaining nodes")
+	root = deleteNode(root, &Node{Val: 3})
+	fmt.Println("  After deleting 3:", root.Val) // 6
+	fmt.Println("  Left:", root.Left)            // nil
+
+	root = deleteNode(root, &Node{Val: 6})
+	fmt.Println("  After deleting 6:", root.Val) // 8
+
+	root = deleteNode(root, &Node{Val: 8})
+	fmt.Println("  After deleting 8:", root) // nil
+	fmt.Println()
+
+	// Test 5: Delete from empty tree
+	fmt.Println("Test 5: Delete from empty tree")
+	root = deleteNode(root, &Node{Val: 10})
+	fmt.Println("  Result:", root) // nil
 }
